@@ -1,0 +1,51 @@
+Date:27/Mar/2015
+----------------
+Java EE Introduction
+--------------------
+- Java EE stands for Java Enterprise Edition
+- Java EE is used to develop web applications and enterprise applications
+
+Components of Java EE
+---------------------
+Two components
+--------------
+- Web Components
+    used to develop web applications
+      - Servlets
+      - JSP (Java Server Pages)
+- Enterprise Components
+    used to develop enterprise applications
+	- EJB (Enterprise Java Beans)
+
+Servers 
+-------
+When we keep the web application or enterprise application in server, then these applications can be used by other clients.
+
+Two types of servers
+--------------------
+Web Server
+----------
+   - used to develop web applications only
+	- Servlets
+	- JSPs
+eg:
+Apache Tomcat
+Adobe JRun
+Eclipse Jetty
+
+Application Server
+------------------
+   - used to develop web applications and enterprise applications
+	- Servlets
+	- JSPs
+	- EJBs
+eg:
+Oracle GlassFish
+Oracle WebLogic
+IBM WebSphere
+JBOSS JBOSS
+
+
+Java EE Architecture
+--------------------
+  - Refer the diagram JavaEE architecture.png

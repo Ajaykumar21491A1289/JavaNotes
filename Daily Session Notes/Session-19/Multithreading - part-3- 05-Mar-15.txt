@@ -1,0 +1,39 @@
+Date:05/Mar/2015
+----------------
+Synchronization
+---------------
+Refer the diagram Synchronization.png
+
+- When two or more threads access the same resource then their is a chance of getting concurrancy problems
+- Synchronization in Java is used to avoid concurrancy problems
+- "synchronized" keyword is used for synchronization
+- synchronized keyword can be used for a method or block of statements
+  eg:
+  void xxx()
+  {
+   ..
+   ...
+   synchronized(this)
+   {
+      ...
+      ...
+      
+   }
+   ..
+   ...
+  }
+
+Inter thread communication
+--------------------------
+- It is done using wait(), notify() and notifyAll() methods
+- These methods belongs to Object class
+- These methods need to be used in Synchronized context only else it will throw IllegalMonitorStateException
+- When wait() is invoked on a thread, the other threads will go to the blocked state. Not the calling thread.
+- notify() and notifyAll() is used to make the threads to come back to runnable state which are in block state.
+
+Refer program InterThreadDemo.java
+
+Deadlock
+--------
+If a thread is waiting for the resourse for longer period of time leads to deadlock
+Refer diagram Deadlock.png

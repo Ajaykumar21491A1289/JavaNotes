@@ -1,0 +1,31 @@
+Date:20/April/2015
+------------------
+
+JPA
+----
+- JPA stands for Java Persistence API
+- JPA is an ORM framework
+
+ORM 
+---
+- ORM stands for Object Relational Mapping
+
+   Refer diagram ORM.png
+
+Developing a JPA Application in Eclipse
+----------------------------------------
+  Refer Developing JPA Application in eclipse document
+
+The configuration file in JPA is persistence.xml and this file is created in META_INF folder of JPA project
+
+Steps in JPA Application
+------------------------
+- Create EntityManagerFactory object which refers to the persistence unit of persistence.xml file
+- Create EntityManager object using EntityManagerFactory object
+- Create EntityTraction object using EntityManager object
+- Begin the trasaction
+- Create POJO class object 
+- Persist POJO class object
+- Commit the transaction
+
+

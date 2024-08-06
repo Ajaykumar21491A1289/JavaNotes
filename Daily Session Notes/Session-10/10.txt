@@ -1,0 +1,182 @@
+Date:20/Feb/2015
+----------------
+Polymorphism
+------------
+- Polymorphism means many forms
+
+Types 
+----
+- Compile time - Method Overloading
+- Run time - Method Overriding
+
+
+Method Overloading
+-------------------
+- Compile time polymorphism
+- Method name is same but the signature is different
+	Signature => number of arguments/type of arguments
+- Applicable in the same class as well as sub classes
+eg:
+area(int,int,int){}
+area(int,int){}
+area(float,float){}
+
+Method Overriding
+-----------------
+- Runtime polymorphism
+- Method name is same and signature is also same
+- Applicable only in sub classes
+eg:
+class Vehicle
+{
+   void drive()
+   {}
+}
+class Car extends Vehicle
+{
+   void drive() //Overridden method
+   {}
+}
+
+Car c = new Car();
+c.drive();//calls drive() of Car
+
+When the Derived class object calls the overridden method then it invokes the method present in sub class
+so we use super.method name to call derived class method
+
+  - Refer program InheritanceDemo2.java
+
+super reference
+----------------
+- super is used to refer to the base class members from Derived class method
+- super() is the first line added to every constructor implicitly
+- To call parameterized constructor of base class from derived class constructor, call it explicitly
+- Call to super() must be the first statement in constructor
+
+Constructors in Inheritance
+---------------------------
+- Refer program InheritanceDemo3.java
+
+V.V.Imp Note
+------------
+If a base class reference refers to the sub class object then it can invoke only the overridden methods of subclass
+
+eg:
+class Vehicle
+{
+    void drive()
+    {}
+}
+class Car extends Vehicle
+{
+    void drive() //Overridden method
+    {}
+    void changeGear()
+    {}
+}
+
+Vehicle v = new Car();
+v.drive();//calls drive() of Car
+v.changeGear();//Error
+
+final keyword
+--------------
+- final keyword can be used for a variable(datamember or local variable),method and class
+
+Variable
+--------
+- It is a constant (variable value cannot be modified)
+eg:
+final int MAX = 100;
+MAX = 200;//Error
+
+Method
+------
+- It cannot be overridden
+
+eg:
+class Base
+{
+    final void xxx(){}
+}
+class Derived extends Base
+{
+   void xxx(){} //Error
+}
+
+class
+-----
+- It cannot be sub classed
+
+eg:
+final class Base
+{
+   
+}
+class Derived extends Base {} //Error
+
+Predefined final classes
+------------------------
+- System
+- String
+- Math
+
+	Wrapper classes
+	--------------
+	- Integer
+	- Float
+	- Double
+	- Boolean
+	- Byte
+	- Short
+	- Character
+	- Long
+
+All Wrapper classes are final
+
+eg:
+class Sample extends String
+{
+   void xxx()
+   {
+	SOP("xxx");
+   }
+   psvm()
+   {
+	Sample s = new Sample();
+	s.xxx();
+   }
+}
+
+Abstract classes
+----------------
+- Abstract classes are used to form the rules or specifications
+- A method which is just declared is called as abstract method
+- An abstract class contains zero or more abstract methods
+
+eg:
+abstract class Sample
+{
+   void xxx(){} //defined or implemented or concreate
+   abstract void yyy();//declared
+}
+
+- If a class extends an abstract class then we need to override all abstract methods else make the class as abstract
+eg:
+class Sample1 extends Sample
+{
+   void yyy(){}
+   void zzz(){}
+}
+abstract class Sample2 extends Sample
+{
+   void ppp(){}
+}
+
+- We cannot create objects for abstract classes but we can create references referring to the sub class object
+-when a class extends abstract class we should implement the abstract methods init
+eg:
+Sample s = new Sample();//Error
+Sample s1 = new Sample1();//valid
+-here s1  will invoke over ridden methods only.
+- Forces "is-a" relationship

@@ -1,0 +1,225 @@
+
+Date:26/Feb/2015
+----------------
+
+Strings:
+--------------------------------------------------------
+-A string is a final class it is present in java.lang.String package.
+-String is a group of characters
+-string is immutable
+
+WAYS TO CREATE A STRING
+-----------------------------------------------------------------
+1)USING NEW KEYWORD.
+eg:
+String str = new String("Ajay");
+
+2)WITHOUT USING NEW KEYWORD.
+eg:
+String str = "Ajay";
+
+
+Methods of String class
+------------------------------------------------------------------------
+1) char charAt(index) - it is used to access each character in a string
+    eg:
+ 	String s = "Hello";
+	SOP(s.charAt(1));//e
+
+Note:
+== ->compares the memory location of two objects
+equals -> compares the content of two objects
+
+
+- int compare(String)
+	eg:
+	String s1 = "abc";
+	String s2 = "xyz";
+	if ((s1.compare(s2)) < 0)
+	   SOP(s1+" is lessthan "+s2);
+	s1 < s2 => < 0
+	s1 > s2 => > 0
+	s1 = s2 => = 0
+
+2) compareTo(String another string): we can compare two strings character by character 
+    it returns
+    0(both equal)
+    +ve(s1>s2)
+    -ve  (s2>s1)
+
+3) String concat(String) - 
+	eg:
+	String s1 = "Hello";
+	String s2 = "World";
+	s1.concant(s2);
+	SOP(s1);//HelloWorld
+
+4) split(String)
+    by using split() method we can divide the string in to tokens
+  eg:
+     str.split("")
+
+
+5) boolean equals(String)
+       eg:
+	String s1 = "Hello";
+	String s2 = "Hello";
+	SOP(s1.equals(s2));//true
+
+6) boolean equalsIgnoreCase(String)
+
+7) byte[] getBytes()
+
+8) int indexOf(String)
+	eg:
+	String s = "Hello";
+	SOP(s.indexOf("e"));//1
+	SOP(s.indexOf("llo");//2
+
+
+9) int lastIndexOf(String)
+	SOP(s.lastIndexOf("l");//3
+
+10) int length()-it is present in string class and it is used to get string length
+	eg:
+	String s = "Welcome";
+	SOP("Length = "+s.length());//Length = 7
+
+
+11) boolean starsWith(String)
+	eg:
+	String s = "Hello";
+	SOP(s.startsWith("He"));//true
+
+
+12) String substring(int)
+	eg:
+	String s = "0123456789";
+	SOP(s.substring(4));//456789
+
+
+13) String substring(int,int)
+	eg:
+	String s = "0123456789";
+	SOP(s.substring(4,7));//456
+	first arg - start counting from 0 from begining
+	second arg - start counting from 1 from beginning
+
+
+14) char[] toCharArray() - convert string to character array
+	eg:
+	String s = "Hello";
+	char[] c = s.toCharArray();
+	c[] = {'H','e','l','l','o'}
+
+
+15) String toLowerCase()
+
+16) String toUpperCase()
+
+17) String toString()
+The toString() method returns the String representation of the object.
+
+18) String trim()
+	- to eliminate trial white spaces
+	eg:
+	String s = "    Hello World  ";
+	SOP(s.trim());//Hello World
+
+19) String valueOf(int)
+    - Converts a numeric value (int,float,double..) into String
+	eg:
+	main()
+	{
+	   int n=10;
+	   xxx(String.valueOf(n));
+	}
+        xxx(String s)
+	{}
+
+
+
+
+
+StringBuffer
+------------
+- StringBuffer is mutable
+- Methods in StringBuffer are synchronized
+	eg:
+	StringBuffer sb = new StringBuffer("Hello");
+	sb.append("World");
+	SOP(sb);//HelloWorld
+   
+    final StringBuffer sb = new StringBuffer("Hello");
+    sb.append("World");
+    SOP(sb);
+	final int MAx=100;
+	MAX=200;//error
+When final keyword is used for reference data type, the reference cannot be changed where as we can change the value of that variable
+    
+
+
+
+StringBuilder
+-------------
+- StringBuilder is mutable
+- Methods in StringBuilder are not synchronized
+
+
+
+System.gc()
+-----------
+gc stands for garbage collector
+- this method is used to send a request to the garbage collector to do the garbage collection some what prior.
+- This method is not gareented to do the garbage collection
+
+Wrapper classes
+---------------
+- For every primitive type their is a corresponding reference type called as Wrapper classes
+- Wrapper classes are used to convert reference type into primitive type called as parsing
+- All wrapper classes are final
+
+primitive type     reference type(wrapper class)
+---------------------------------
+   byte			Byte
+   short		Short
+   char 		Character
+   int			Integer
+   long			Long
+   float      	 	Float
+   double		Double
+   boolean		Boolean
+---------------------------------
+
+eg:
+String s = "123";
+int n = Integer.parseInt(s);
+SOP(n);//123
+
+String s1 = "3.14";
+double d = Double.parseDouble(s1);
+SOP(d);//3.14
+
+Note:
+-----
+abstract and final are illegal combination of modifiers
+
+WAP to count number of vowels, consonants and words in a given string
+ - Refer program Count.java
+
+Assignment
+----------
+main()
+{
+    int count = countString(new int[]{2,3,4,5,7,9,11,13,15,17,19},new String[]{"aa","bbb","cccc","ddddd","ee","fffff"});
+     SOP("count = "+count);//Count = 2
+}
+static int countString(int[] intArray,String[] stringArray)
+{
+   //pick up prime nos from intArray
+   //find sum these prime nos sum = 77
+   //find the sum of digits of prime sum until we get single digit
+   // 7+7 = 14 = 1+4 = 5(sumsingle digit)
+   //return the numbers of strings in string[] whose length is 5
+   //return 2(output) - ddddd,fffff
+}

@@ -1,0 +1,451 @@
+
+ 
+Core JAVA Interview Quotations ?
+OOPS
+1.   What is OOPS Concepts ?
+A)We have Mainly 4 oops concepts
+-inheritance
+-polymorphism
+-interface
+-Abstraction
+
+
+2.   What is Encapsulation ?
+A) It is a mechanism Binding Attributes & Methods together inside a class & Object creation.
+
+
+3. What is Inheritance ?
+A) Reusability of existing code from super class to sub class
+-it support multi-level inheritance.
+-it won’t support multiple inheritance through java due to ambiguity.
+-it supports multiple inheritance through interface
+-to implement this we use extends keyword.
+
+
+4. Can you explain about Polymorphism?
+A)One thing can act as differently in different situations is called polymorphism.
+-poly means many forms
+-we have mainly two types of polymorphism 
+   -Method overloading(compile time polymorphism) : Methods name is same parameters are different return type may or may not same will happen in same class or super class
+   -Method overriding(Run time Polymorphism) : Method name is same parameters are same return type is same will happen in different classes through inheritance.
+
+
+5. Can you tell me difference between Overloading and Overriding?
+method overloading 					method overriding
+-------------------------------------------------------------------------
+-Method name is same				-Method name is same
+-Parameters are different			-Parameters  are same
+-Return type may or may not same		-return type is same
+-will happen in same class or super class 	-will happen in different class through     
+						 inheritance
+
+
+
+
+
+
+Constructor 
+1. What is Constructor ?
+A)-class name & Constructor name should be same
+-it will call while object creation
+-there are two types of constructor(default &Parameter)
+-always a constructor is overloaded.
+-Constructors are mainly for initialize purpose 
+-Constructor does not have any return type not even void also.
+-Each and every class need  one default constructor.   
+
+
+2. How may types of constructor ?
+A)-there are two types of constructor(default &Parameter)
+
+
+3. What is main purpose of constructor ?
+A)-Constructors are mainly for initialize purpose 
+
+
+4. Can you tell me difference between constructor & method ?
+A)constructor					Method
+----------------------------------------------------------------------------
+-class name and constructor name is same	-class name and method name is not same
+-used for initialize purpose 			-used to implement business logics
+-it is called implicitly            		-we need to call explicitly
+-No need of creating object			-need to create a object
+-constructor is always overloaded  		-method is both overloaded and overriding
+-no return type not even void also		-there is a return type
+-it cannot be inherited				-it can be inherited
+
+
+5. Constructor has any return type ?
+A)-Constructor does not have any return type not even void also.
+
+
+6. Every class need constructor or not ?
+A)-Each and every class need  one default constructor.   
+
+
+
+
+
+
+
+Static 
+1. What is static ?
+A)-Static is Keyword
+- We can declare static as variables and methods
+-we can access static variables and methods (classname.variablename , classname.methodname)
+-Static block will be called while class is loaded into JVM .
+- A static method can call only other static methods & Variables directly
+-Static Method Cannot call Non-Static Methods
+-Non-Static Methods Can Access static methods & Variables
+-Static block is initialized when the class is  loaded in the jvm 
+Note: Static Block is Implicitly loaded In java whenever a class is Loaded
+
+
+2. What is advantage of static?
+A)-Static block is initialized when the class is  loaded in the jvm 
+-we can access static methods by without creating an object
+
+
+3. Can you declare as static variable and static methods and What is advantage ?
+A)yes we can declare static variable and static methods
+-we can access them directly by without creating object
+
+
+4. Can you  call Static methods and static variable in static method ?
+A)- A static method can call only other static methods & Variables directly
+
+5.  Can you  call non  static methods and static variable in static method ?
+A)-Static Method Cannot call Non-Static Methods
+
+
+6. Can you  call non static method and static variable in non static method ?
+A)-Non-Static Methods Can Access static methods & Variables
+
+
+7. What is static block?
+A)Static Block is Implicitly loaded In java whenever a class is Loaded
+
+
+
+
+
+
+
+Final 
+1.  What is final ?
+A)-Final is a Keyword
+-we can declare as a final as variables ,methods ,class.
+-Final Variable we cannot be Modify
+-Final Methods we cannot be Override
+-Final Class We cannot be Inherited.
+
+
+2.  Can you modify final variable ?
+A)No we cannot modify the final variable once declared
+
+
+3. Can you override final methods ?
+A)No we cannot override the final methods.
+
+
+4. Can you Inheritance final class ?
+A)No we cannot inheritance the final class.
+
+
+
+
+
+
+
+Interface 
+1. What is Interface ?
+A)-Interface is a Keyword
+-Interface having  Method signature only there is no method implementation.
+-If a class implements Interface that class should override all interface methods otherwise the class showing compile time error.
+- We cannot create objects for interfaces but we can create references referring to the sub class object. By using this reference we can access only interface methods we cannot access local methods.
+-In an interface all methods are public and abstract by default
+- In an interface all variables are public, static and final by default.
+-If a class implements an interface then we need to override all methods else make the class as abstract .
+-java will support multiple inheritance through interface (our class will implements more than one interface).
+
+
+2. Can you create object to Interface ?
+A)No we cannot create.
+-because in interface class we don't have any method body we have only method signature so it is not important to create  an object to that class.
+
+3. Can you create reference to Interface and advantage ?
+A)yes we can create a reference to interface using sub class .
+-using this reference we can access only the only the overridden methods.
+
+
+4. Can you declare to variable in interface and what is advantage ?
+A)yes we can declare
+- In an interface all variables are public, static and final by default.
+
+
+
+
+
+
+
+Abstract class
+1. What is Abstract class ?
+A)-Abstract is a Keyword
+-A method which is just declared is called as abstract method.
+-An abstract class contains zero or more abstract methods
+-Abstract class having abstract methods and non-Abstract Methods
+-if any class having one abstract method that class should be declared as abstract class.
+
+
+2.  Can you create Object to abstract class?
+A)- We cannot create objects for abstract classes but we can create references referring to the sub class object.
+
+
+3.  Can you create constructor to abstract class ?
+A)-We can Create Constructor to Abstract class.
+-We can Access Abstract Class Constructor While Sub  Class Object Creation. 
+
+
+
+
+
+
+
+Exception Handling 
+1. What is Exceptions ?
+A)An Exception will protect our business logic from error.
+-we can  handle this exception by using try and catch block
+-Normal Flow it wont execute any catch block abnormal flow only execute catch block. Below is the example for Normal Flow
+
+
+
+2. Can you tell me difference between Checked exceptions and Unchecked Exceptions ?
+A)	checked exception				unchecked exception
+----------------------------------------------------------------------------------------
+-compile time exception					-run time exception
+-extends exception class				-extends exception class
+-ex:Ioexception, SQLException				-Runtime exception
+
+ 
+3. Keywords of Exceptions ?
+A)try
+-catch
+-finally
+-throw
+-throws
+4. What is finally keyword ?
+A)-Finally Block will be executed if exception may occur or may not occur it will executed.
+-Throw is a Keyword it will be executed for runtime and using our own exceptions.  
+
+5. What is difference between throws and throw ?
+A)-Throws is keyword it will be executed  layer by layer.
+-throws is unchecked exception
+
+--Throw is a Keyword it will be executed for runtime and using our own exceptions.  
+-throw is checked exception.
+
+
+6.  What is hierarchical  of Exceptions ?
+A)-throwable is the super class for all exceptions
+-the exception is the super class for both checked and unchecked exception
+
+
+7.  How do you write user defined exceptions ?
+A)we can write using throw keyword
+
+throw new userdefinedException();
+
+
+
+
+
+
+
+Multithreading 
+1. What is  Multithreading  ?
+A)-Multiple Threads Are Running Simultaneously Reducing CPU Ideal Time
+
+
+2. What is Thread ?
+A)-A Thread Is a Light Weight ,the These  Threads are  Running on a Separate Path
+
+
+3. What are the stages in thread ?
+A)-new born stage
+-runnable stage
+-running stage
+-blocked stage
+-dead stage
+
+
+4. Which is super class Thread class ?
+A)Object class
+
+
+5. What is isAlive() method  in threading?
+A)isAlive() : Thread is running or not (It returns Boolean Values).
+
+
+6. What is Yield() method in threading  ?
+A)-Yield(): We a Thred Come to Stop Remaining Thread Time Is Allocated to next Priority Thread.
+
+
+7. What is join() method in threading  ?
+A)-join() : Communication Between Two Threads
+
+
+8. How many ways to create to Thread ?
+A)-We can create a Thread in two ways
+1)extends Thread class
+2)implements Runnable interface
+
+
+
+
+
+
+
+Strings :
+  1. What is String ?
+A)- A string is a collection of character
+-String is a final class it is immutable.
+
+
+  2. Why Strings are immutable ?
+A)-When we create a string object it is constant, if we are trying to modify existing string it will create another memory location.
+-existing object is eligible for garbage collector.
+
+
+  3. Difference between String and StringBuffer , StringBuilder?
+A) String		                            String Buffer			StringBuilder
+----------------------------------------------------------------------------------------------------------------
+-immutable		                              -Mutable			          -Mutable 
+-All Methods are not synchronized   		      -All Methods are synchronized       --All Methods are not synchronized
+
+
+
+
+
+
+
+Collection Framework 
+ 1. What is Collection Framework ?
+A)-it is a predefined framework it will present in the java.util.Collection.
+-It will Allow different data type
+-Increase their memory location
+-Business Logic Methods Can be implement (Add,delete).
+
+
+
+ 2. what is package of Collection framework ?
+ 3. What is Set ?
+A)-Set is an interface which extends Collection Interface.
+-Set will not allow duplicates.
+-it is unordered.
+-Size is growing allow any type of data.
+
+
+
+ 4. What is List ?
+A)-It is a Interface which extends Collection interface.
+ -List allow duplicate elements
+-List is Ordered
+-The List size is growing and allow any type of data.
+
+
+
+ 5. Can you tell me difference between Set List ?
+A)- List is ordered where as Set is unordered
+- List allows duplicate elements where as Set does not allow duplicate elements
+
+
+ 6. What is HasSet ?
+A)-Hashset is a class which implements Set Interface.
+-elements are not ordered.
+-elements are not sorted.
+-no Synchronization methods
+
+
+
+ 7. Can you tell me difference between ArrayList and Vector ?
+A)- In ArrayList the methods are not synchronized where as in Vector the methods are synchronized
+- ArrayList is not thread safe where as Vector is thread safe
+
+
+
+ 8. What is Iterator ?
+A)-iterators are used to iterate in collection hierarchy.
+It is of three types
+1)Iterator
+2)ListIterator.
+3)Enumeration
+
+
+ 9. What is ListIterator ?
+A)-it is used to iterate in a collection hierarchy.
+-it has both add and remove methods.
+-it will move in forward and backward direction.
+-initially it points to center based on user preference it will move to start or end.
+Methods:
+-boolean hasNext()
+-object next()
+-boolean hasPrevious()
+-object previous()
+
+
+
+ 10.Can you tell me difference between Iterator and Enumeration ?
+A)-iterator has no synchronized methods 
+-iterator has remove method 
+-it is forward direction
+
+-it has synchronized methods 
+-it is used for only printing purpose
+-it is forward direction.
+
+
+ 11. What is Generics in CollectionFramework ?
+A)-if we want to store particular type of elements we use generics.
+-from jdk 1.5 onwards they introduce generics
+
+
+
+ 12. What is Map ?
+A)-map is an interface which is present in java.util.map
+-Map is in form of key value pair.
+
+
+ 13. What is HashMap ?
+A)-Hashmap is a class which implements the Map interface.
+-it is present in java.util.hashmap.
+-it is in the form of key value pair.
+-it allow null key & nullvalue.
+-All methods are not synchronized.
+-it is not ordered.
+
+
+
+ 14. What is Hashtable ?
+A)-Hashtable is a class which implements map interface
+-it is in the form of key value pair.
+-it don’t allow null key and null value.
+-all methods are synchronized and it is a legacy class
+
+
+
+ 15. can you tell me difference between HashMap and Hashtable?
+A)- In HashMap the methods are not synchronized where as in Hashtable the methods are synchronized
+- HashMap is not thread safe where as Hashtable is thread safe
+
+
+
+ 16. What is ArrayList ?
+A)-Linked List is a class that implements the List Interface.
+-the is no continuous memory location in ArayList
+-The Methods are not synchronized
+-If we want to add & remove an element we can use the Linked List
+
+
+
+
+Total : 63

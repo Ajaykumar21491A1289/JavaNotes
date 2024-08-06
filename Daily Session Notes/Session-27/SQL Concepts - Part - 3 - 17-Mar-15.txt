@@ -1,0 +1,104 @@
+Date:17/Mar/2015
+----------------
+Creating tables using existing tables
+-------------------------------------
+
+1. Create a table books5 using books table
+  >create table books5 as (select * from books);
+
+2. Create a table books16 which contains only bno and bname from books table
+ >create table books16 as (select bno,bname from books);
+3. Create table books17 which contains the records of books table where price>=500
+  >create table books17 as (select * from books where price>=500);
+4. Create table books18 which copies only the structure of the table but not records
+  > create table books18 as (select * from books where 1=2);
+
+
+Sub Queries
+-----------
+- Query with in a query is called as sub query.
+
+Eg:
+Display the second max price from books table
+>select max(price) from books;
+
+  max(price)
+  ---------
+    800
+>select max(price) "Second Max" from books where price<800;
+  Second Max
+  ----------
+   500
+
+Subquery
+--------
+>select max(price) "Second Max" from books where
+   price < (select max(price) from books);
+
+Table Constraints
+------------------
+
+- applying rules on the given columns
+ Constraints
+ -----------
+  -  primary key
+         - which is unique and not null and used to identify a row
+  	   uniquely
+  -  not null
+         - does not take null values (mandatory fields)
+  -  check
+         - used to check the given condition for the column
+  -  unique
+         - no duplicates (accepts null values)
+  -  foreign key
+         - a primary key of one table acting as ordinary key in 
+	   another which is mainly used to relate the tables
+
+     eg:
+	Table : Department
+        -------------------
+         dno(pk)   dname
+        ------------------
+          10        HR
+          20        Finance
+ 	  30        Training
+	--------------------
+
+	Table : Employee
+        ----------------
+  	eno   ename   sal   dno(fk)
+        ------------------------
+	111     xxx   5000   10
+        222     yyy   5500   20
+        333     zzz   6000   40 (error) - 40 not present in Dept table 
+        -------------------------
+
+eg:
+create table department (dno number(2) primary key, 
+	dname varchar(10) not null);
+
+create table employee
+  (eno number(3) primary key,
+   ename varchar(10) not null,
+   salary number(4) check (salary > 5000 and salary < 8000),
+   dno number(2),
+   constraint fk_dno foreign key (dno) references department(dno));
+
+DCL Commands
+
+------------
+
+GRANT and REVOKE
+
+----------------
+
+GRANT - used to give permissions to the user
+
+REVOKE - used to take back the permissions given to the user
+
+
+
+
+eg:
+>grant insert, update, select on books to scott;
+>revoke insert,update on books from scott;

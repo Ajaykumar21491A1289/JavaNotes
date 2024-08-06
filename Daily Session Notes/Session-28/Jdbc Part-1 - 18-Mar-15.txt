@@ -1,0 +1,108 @@
+Date:18/Mar/2015
+----------------
+JDBC
+----
+- JDBC Stands for Java DataBase Connectivity
+- JDBC is an API which is used to connect to a data base from a java program
+  
+Refer diagram JDBC1.png
+
+JDBC Drivers
+------------
+4 Types
+--------
+Type 1: JDBC ODBC Bridge Driver
+Type 2: Native API
+Type 3: Network Protocal
+Type 4: Net Protocal
+
+Type 1: JDBC ODBC Bridge Driver
+-------------------------------
+Refer the diagram jdbcodbc.png
+
+- Platform Dependent
+- Removed Type 1 in Java 8 version
+- Install Client DB
+- API is designed using native language (c,CPP)
+
+Type 2: Native API
+-------------------
+- Partial Java Driver
+- Client DB
+
+Type 3: Network Protocal
+------------------------
+- Pure Java Driver
+- Platform Independent
+- Vendor Specific
+- Remote Database
+- used only for 3-tier architecture
+
+Type 4: Net Protocal
+--------------------
+- Pure Java Driver
+- Platform Independent
+- Vendore Specific
+- Remote Database
+- used for n-tier architecture
+
+Tiers
+-----
+Refer diagram tiers.png
+
+Steps to connect to the database
+---------------------------------
+1. import java.sql.*;
+2. Load the driver
+  Type 1: Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+  Type 4: Class.forName("oracle.jdbc.driver.OracleDriver");
+
+3. Establish the connection
+  Type 1: Connection con = DriverManager.getConnection("jdbc:odbc:dsn","username","password");
+  Type 4: Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","username","password");
+    1521 - port no where oracle instance is running
+    orcl - System Identification (SID)
+
+4. Create the statement
+   Interfaces
+   ----------
+   Statement         - createStatement()
+   PreparedStatement - prepareStatement()
+   CallableStatement - prepareCall() - used to execute procedures and                        functions of pl/sql
+
+   eg:
+   Statement st1 = con.createStatement();
+   PreparedStatement st2 = con.prepareStatement("select * from books");
+
+5. Execute the statement
+        boolean execute()        - create,alter,drop
+        int executeUpdate()      - insert,update,delete
+        ResultSet executeQuery() - select
+	eg:
+	st1.executeQuery("select * from books");
+	st2.executeQuery();
+6. Close the statement
+     st1.close();
+     st2.close();
+7. Close the connection
+     con.close();
+
+Statement vs PreparedStatement
+------------------------------
+- If the same SQL command is executed multiple times then it is suggested to use PreparedStatement
+- PreparedStatement is dynamic
+
+Creating DSN in ODBC of Control Panel
+-------------------------------------
+Open Control Panel -> System and Security -> Administrative tools->
+Data Sources (ODBC) -> Click on Add->Select the driver "Microsoft ODBC for Oracle" -> click Finish
+
+  Data Source Name : online2
+  username : scott
+  server : orcl
+
+For 32-bit in Win7/win8 :open  C:\Windows\SysWOW64\odbcad32.exe application and continue the steps from "Click on Add" from above
+
+
+
+

@@ -1,0 +1,101 @@
+Date:28/Mar/2015
+----------------
+Servlets
+--------
+Servlets are java programs used to develop server side dynamic web applications
+
+Servlet Hirarchy
+----------------
+  Refer diagram ServletHierarchy.png
+
+Servlet Architecture
+---------------------
+  Refer diagram Servlet Architecture.png
+
+Servlet Life Cycle
+-------------------
+- init()
+    - called only once when servlet is loaded
+    - used to open database connections generally
+- service()
+    - called for every request
+- destroy()
+    - called only once when servlet is destroyed
+    - used to close database connections generally
+
+Creating Servlets
+-----------------
+- by extending GenericServlet
+     or
+- by extending HttpServlet
+
+GenericServlet vs HttpServlet
+-----------------------------
+- GenericServlet is used for all protocals like ftp, smtp, http etc where as HttpServlet is used only for http protocals
+
+eg:
+public class WelcomeServlet extends GenericServlet
+{
+    public void service(ServletRequest request,ServletResponse response)
+	throws ServletException, IOException
+    {
+	//handle the request
+    }
+}
+
+public class WelcomeServlet extends HttpServlet
+{
+    public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
+    {
+	//Handle the request
+    }
+    public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
+    {
+	//Handle the request
+    }
+}
+
+Note:
+----
+- HttpServletRequest interface extends ServletRequest interface
+- HttpServletResponse interface extends ServletResponse interface
+
+
+CATALINA_HOME:D:\Program Files\Apache Software Foundation\Tomcat 8.0
+
+Developing a Servlet using Tomcat 8 server in eclipse
+-----------------------------------------------------
+- Configure Apache Tomcat 8 server
+     Click on Window->preferences->Server->Runtime Environments->Click on Add -> Choose Apache Tomcat 8 version and click Next->Click on Browse and select CATALINA_HOME and click Ok->Click Finish
+
+- Create a dynamic web project
+    Click on File->New->Other->Web->Dynamic Web Project
+   Project Name : WebProj
+   Dynamic Web Module Version : 2.5
+
+  Click Finish
+
+- Create a Servlet in Web Project (WebProj)
+     - Right click on WebProj->New ->Servlet
+   class Name:WelcomeServlet
+   and click Finish
+
+- Type the following code in WelcomeServlet.java
+  import java.io.*;
+  import javax.servlet.*;
+  import javax.servlet.http.*;
+  public class WelcomeServlet extends HttpServlet {
+	protected void doGet(HttpServletRequest request, 
+			HttpServletResponse response)
+          throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		out.println("Welcome to servlets");
+	}
+  }
+- Run WelcomeServlet.java
+    Right Click on WelcomeServlet.java->Run As->Run on Server
+
+     which starts tomcat server and opens a brower the the following
+     url
+     http://localhost:8080/WebProj/WelcomeServlet
+   and displays Welcome to Servlets in browser

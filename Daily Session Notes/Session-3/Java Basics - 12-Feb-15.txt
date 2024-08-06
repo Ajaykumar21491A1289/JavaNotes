@@ -1,0 +1,263 @@
+Date: 20/aug/2020
+-----------------
+Java Basics
+-----------
+Variable
+--------
+It is an identifier which allocates some space in memory and the value in memory changes during program execution
+
+Rules for Identifiers (variable,method,class)
+---------------------------------------------
+- can contain a-z,A-Z,0-9,_,$
+- cannot start with a digit (0-9)
+- cannot be a keyword (reserved words)
+
+eg:
+valid identifiers
+-----------------
+- xyz123
+- xyz_123
+- _xyz123
+- $xyz123
+
+invalid identifiers 
+--------------------
+- xyz 123 (space)
+- xyz&123 (&)
+- 123xyz (digit)
+- if (keyword)
+
+Datatypes
+---------
+type of the data the variable holds
+
+Types
+-----
+- primitive data type
+- reference data type
+
+
+primitive data types:
+--------------------
+In Java language, primitive data types are the building blocks of data manipulation. These are the most basic data types available in Java language. 
+Java is a statically-typed programming language. It means, all variables must be declared before its use. That is why we need to declare variable's type and name.
+there are 8 primitive data types
+-----------------------------------
+There are 8 types of primitive data types: 
+•	boolean data type
+•	byte data type
+•	char data type
+•	short data type
+•	int data type
+•	long data type
+•	float data type
+•	double data type
+
+datatype     size    default value
+-----------------------------------
+  boolean   1 bit       false
+  byte      1 byte      0  
+  short     2 bytes     0
+  char      2 bytes     ''
+  int       4 bytes     0
+  float     4 bytes     0.0
+  long      8 bytes     0
+  double    8 bytes     0.0
+  
+------------------------------------
+eg
+boolean flag = true;
+boolean flag = false;
+float a;
+int n;
+
+Reference data types
+---------------------
+Other than primitive types are reference data types
+
+Eg:
+Arrays, Strings, Any object
+
+Points on Data types
+---------------------
+- Default values are applicable only for the data members of the 
+  class not for local variables
+- Local variable need to be intialized
+    eg:
+    class Sample
+    {
+	int m;//data member
+	void xxx()
+        {
+	   int n;//local variable
+	   SOP(n);//compile time error
+	}
+        main()
+  	{
+	   Sample s = new Sample();
+	   SOP(s.m);//0
+	  
+	}
+    }
+- The memory allocation for reference data types is done during
+  runtime using new operator
+- The default value for reference data types is null.
+	eg:
+	String s;
+  	the value of s is null
+
+Casting
+-------
+The process of converting one primitive type to another primitive
+type or one reference type to another reference type is called
+as casting
+
+Types
+-----
+- implicit casting
+- explicit casting
+
+Implicit casting
+-----------------
+eg:
+int n = 100;
+long l = n;
+
+Explicit Casting
+----------------
+eg:
+long l = 100;
+int n = l;//error
+int n = (int)l;//valid
+
+float f = 3.14;
+int n = (int)f;
+SOP(n);//3
+
+Operators in Java
+-----------------
+- Arithmetic Operators -> +,-,*,/,% (modulus - remainder)
+  eg:
+   5/2 = 2 (quotient)
+   5%2 = 1 (remainder)
+- Relational operators -> >,<,>=, <=, ==, != (not equal)
+    - used to form the conditions (comparisions)
+	eg:
+	  int age = 10;
+	   (age <= 20)  --> condition
+  a condition can be either true or false but not both
+
+   (age == 10) -> checks for equality
+
+- Logical operators ->  &&(AND), || (OR), ! (NOT)
+    - used to join the conditions
+    eg:
+     (m1 >= 40) && (m2 >= 40) && (m3 >= 40)
+ 	res = pass
+
+     (m1 < 40) ||  (m2 < 40) ||  (m3 < 40)
+	res = fail
+
+   - In case of && all conditions should be true
+   - In case of || any one condition can be true
+
+- Assignment operators -> =, +=, -=, *=, /=, %=
+    - short cut operators
+
+    eg:
+	x= 5;
+ 	x = x+5; //the value of x is 10
+        the above expn can be written as
+  	  x += 5;
+
+- Conditional operator -> ? (ternary operator)
+    syntax
+    -------
+     (condition)?expn1:expn2;
+   - If the condition is true, it executes expn1
+   - If the condition is false, it executes expn2
+
+   eg:
+	int n1 = 10;
+	int n2 = 5;
+	int big = (n1 > n2)?n1:n2;
+
+- Increment and decrement operators -> ++, --
+
+  Increment - ++ -> value of variable is increamented by 1
+  Decrement - -- -> value of variable is decremented by 1
+
+  Types
+  -----
+   - pre
+   - post
+
+Increment(++)
+-------------
+pre
+---
+eg1:
+  x=5;
+  ++x;
+  SOP("x="+x); //x=6
+
+eg2:
+  x=5;
+  y = ++x;
+  SOP("x="+x+" "+"y="+y);//x=6 y=6 
+
+Post
+---
+eg1:
+  x=5;
+  x++;
+  SOP("x="+x);//x=6    
+eg2:
+  x=5;
+  y=x++;
+  SOP("x="+x+" "+"y="+y);//x=6 y=5
+
+In case of pre first increment then assignment where as in case of
+post one assignment then increment
+
+Decrement(--)
+-------------
+pre
+---
+eg1:
+  x=5;
+  --x;
+  SOP("x="+x); //x=4
+
+eg2:
+  x=5;
+  y = --x;
+  SOP("x="+x+" "+"y="+y);//x=4 y=4 
+
+Post
+---
+eg1:
+  x=5;
+  x--;
+  SOP("x="+x);//x=4    
+eg2:
+  x=5;
+  y=x--;
+  SOP("x="+x+" "+"y="+y);//x=4 y=5
+
+Control Statements
+------------------
+- These statements are used to control the flow of execution of
+program
+
+
+Types
+-----
+- if statement
+- switch statement
+- while loop
+- do..while loop
+- for loop
+- break and continue
+- labelled break and continue
+

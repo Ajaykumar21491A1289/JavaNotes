@@ -1,0 +1,91 @@
+
+Date:10/Feb/15
+--------------
+OO Concepts
+-------------
+- Objects
+- Classes
+- Data Abstraction
+- Data Encapsulation
+- Inheritance
+- Polymorphism
+
+Java
+----
+- Java is an object oriented programming language developed by James Gosling at Sun Microsystems (now merged with Oracle Corp)
+
+Java Versions
+-------------
+- JDK 1.0 (Java Development Kit)
+- JDK 1.1
+- JDK 1.2
+- JDK 1.3
+- JDK 1.4
+    - J2SE - Java 2 Standard Edition 
+ 		- used to develop desktop/standalone applications
+    - J2EE - Java 2 Enterprise Edition
+		- used to develop web applications
+    - J2ME - Java 2 Micro/Mobile Edition
+		- used to develop mobile applications
+- Java 5/Java 1.5
+    - Java SE
+    - Java EE
+    - Java ME
+- Java 6/Java 1.6
+- Java 7/Java 1.7
+- Java 8/Java 1.8 (March 2014)
+
+Java Features (Buzzwords)
+-------------
+1. Simple
+	- lots of APIs (Application Programming Interfaces)/libraries
+     eg:
+    	sort(n)
+2. Object Oriented
+3. Robust (Strong) - Exception Handling
+4. Platform Independent
+      - A Java program can run on any platform (OS)
+      - A Java program is a collection of classes
+	eg:
+	X.java
+	------
+	class A
+	{
+	   main(){}
+        }
+	class B
+	{
+	   main(){}
+        }
+	
+	To Compile
+	----------
+	>javac X.java
+	   - A.class
+           - B.class
+         These .class file are called as byte codes
+	These byte codes are platform independent
+
+       - To run a Java program atleast one class should contain 
+ 	  the main()
+	To Run
+	------
+	  >java A - runs from A class main()
+	  >java B - runs from B class main()
+5. Interpreted - java command is an interpreter
+6. Portable
+	- since the size of all data types is same on all platforms
+7. Secure - No Pointers in Java as pointers violate security
+8. Multithread
+	- A thread a light weight process under execution with in 
+	  a process
+	- Multithreading is used to increase the performance of
+	  application
+9. Dynamic 
+	- In Java the memory allocation for arrays, Strings or any
+	  object is done during runtime (dynamic)
+10. Distributed
+	- refer diagram distributed.png
+
+
+D:\Program Files\Java\jdk1.8.0 -> JAVA_HOME

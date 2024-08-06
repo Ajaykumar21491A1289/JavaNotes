@@ -1,0 +1,85 @@
+Date:09/Mar/2015
+----------------
+Java 5 features
+---------------
+- Scanner class
+- Enhanced for loop
+- Variable arguments
+- Autoboxing
+- static imports
+- Generics
+- Annotations
+
+Variable Arguments (varargs)
+------------------
+A variable argument can store multiple values like an array
+main()
+{
+   sum(10,20,30);
+   sum(10,20);
+   sum(10);
+}
+sum(int... n) //n is variable argument which is an array
+{
+
+}
+
+sum(int m,int... n) //valid
+{}
+
+sum(int... m,int... n) //Error
+{}
+sum(int...m , int n)//Error
+{}
+
+Note:
+----
+In a method we can have only one variable argument and should be the last argument
+
+Refer program VarArgsDemo.java
+
+Autoboxing
+----------
+- Converting respective primitive type to reference type or vice versa
+automatically. This feature is known as autoboxing
+void xxx()
+{
+   int n=10;
+   yyy(n);//yyy(new Integer(n));//prior Java 5
+}
+void yyy(Integer n)
+{
+ ..
+}
+
+static imports
+--------------
+static import is used to refer to the static members of a class in a package without using the classname
+
+Refer program Sample.java & StaticImportDemo.java
+
+Generics
+--------
+- Generics means managing different data types
+
+Refer program GenericsDemo.java
+
+Annotations
+-----------
+- used to reduce the burden to the compiler which increases the performance of compiler/application
+    Refer AnnotationDemo.java
+- Annotations are used to avoid writing configuration files
+- Annotations are used to reduce the code for the programmer
+
+eg:
+@Entity //Book table is created implicitly
+class Book
+{
+   int bno;
+   String bname;
+   double price;
+   ..
+   ..
+   ..
+}
+   

@@ -1,0 +1,15 @@
+Date:23/April/2015
+------------------
+Struts Work Flow
+----------------
+Refer diagram struts work flow.png
+
+Login Application
+------------------
+Refer programs
+   - LoginAction.java
+   - Login.jsp
+   - Welcome.jsp (view)
+   - struts.xml
+   - failure.jsp
+

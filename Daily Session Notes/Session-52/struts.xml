@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts2.devMode" value="true"/>
+    <package name="helloworld" extends="struts-default">
+    	<action name="hello"
+    	   class="com.raj.struts2.HelloWorldAction" method="execute">
+    	 	<result name="success">/HelloWorld.jsp</result>  
+    	 </action>
+    </package>
+    <package name="login" extends="struts-default">
+        <action name="login"
+           class="com.raj.struts2.LoginAction" method="execute">
+             <result name="success">/Welcome.jsp</result>
+             <result name="failure">/failure.jsp</result>
+           </action>
+    </package>
+    <package name="generictags" extends="struts-default">
+    	<action name="iterateAction" class="com.raj.struts2.IterateAction">
+    		<result>/Iterator.jsp</result>
+    	</action>
+    </package>
+    <package name="validation" extends="struts-default">
+    	<action name="addEmployee" class="com.raj.struts2.AddEmployeeAction">
+    		<result name="success">/employee.jsp</result>
+        	<result name="input">/addemployee.jsp</result>
+    	</action>    
+    	   
+    </package>
+	<package name="ognl1" extends="struts-default">
+
+      <action name="ognl" 
+         class="com.raj.struts2.OGNLAction" 
+         method="execute">
+         <result name="success">/HelloWorld1.jsp</result>
+      </action>
+
+   </package>
+	
+</struts>

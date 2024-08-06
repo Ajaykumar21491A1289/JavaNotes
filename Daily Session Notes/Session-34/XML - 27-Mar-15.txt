@@ -1,0 +1,42 @@
+Date:27/Mar/2015
+----------------
+XML
+---
+- XML stands for Extensible Markup Language
+- XML is used to transport the data from one application to another application
+- XML is used to create configuration files
+
+HTML vs XML
+-----------
+- In HTML all tags are predefined where as in XML all tags are user defined
+- HTML is used to present the data where as XML is used to say about the data (METADATA)
+	eg:
+	<b>xxx</b>  -- HTML (bold)
+	<salary>5000</salary> -- XML 
+- HTML is not case sensitive where as XML is case sensitive
+- HTML is not standard where as XML is standard
+
+
+Valid XML
+---------
+An XML document can be a valid XML when it follows the following rules
+
+-> An XML file should contain a root tag and only one root tag
+-> For every XML tag there should be a closing tag or should be self enclosing tag
+	eg:
+	<mytag>....</mytag>
+	or
+	<mytag/> -- self enclosing
+-> Attribute values should be in either " " or ' ' 
+	eg:
+	<mytag att1 = "value1">...</mytag>
+	   or
+	<mytag att1 = 'value1'>...</mytag>
+-> No overlapping of tags
+	eg:
+	<b><i>xxx</b></i> //overlapping tag
+        <b><i>xxx</i></b> //valid
+
+
+Refer library.xml
+

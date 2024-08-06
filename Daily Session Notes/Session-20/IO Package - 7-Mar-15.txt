@@ -1,0 +1,79 @@
+Date:7/Mar/2015
+---------------
+IO Package
+----------
+Stream : A stream is a flow of data 
+
+Types of Streams
+----------------
+- byte streams
+- character streams
+
+
+Refer diagram IOStreams.png
+
+- The top most abstract class under byte stream are InputStream and OutputStream
+- The top most abstract classes under character stream are Reader and Writer
+
+Sub classes of InputStream
+--------------------------
+- FileInputStream 
+   - used to open an exiting file and reads the data from the file
+- BufferedInputStream
+   - used to increase the performance of read operations
+- DataInputStream
+   - used to read different type of data from the file
+- ObjectInputStream
+   - used to read an object from the data file
+
+Sub classes of OutputStream
+---------------------------
+- FileOutputStream
+   - used to create a file and writes data onto the file
+- BufferedOutputStream
+   - used to increase performance of write operations
+- DataOutputStream
+   - used to write different type of data onto the data files
+- ObjectOutputStream
+   - used to write an object onto the data file
+
+Sub classes of Reader
+---------------------
+- FileReader
+    - used to open an exising file and read data from the file
+- BufferedReader
+    - used to increase the performance of read operations
+
+Sub classes of Writer
+---------------------
+- FileWriter
+    - used to create a file and write data onto the file
+- BufferedWriter
+    - used to increase the performance of write operations
+
+Refer programs
+---------------
+- FileOutputStreamDemo.java
+- FileInputStreamDemo.java
+- DataOutputStreamDemo.java
+- DataInputStreamDemo.java
+- FileWriterDemo.java
+- FileReaderDemo.java
+
+
+Serialization
+-------------
+- The process of writing an object onto the data file is called as Serialization
+- The process of reading an object from the data file is called as deserialization
+- In order to serialize an object of a class, the class should implement Serializable interface else it will throw NotSerializableException
+- Serializable interface is a marker interface
+- Marker interface does not contain any methods
+   eg:
+   Serializable
+   Clonable
+   Remote
+
+Refer program SerializationDemo.java
+
+
+- 

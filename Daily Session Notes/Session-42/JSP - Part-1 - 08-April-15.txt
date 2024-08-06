@@ -1,0 +1,149 @@
+Date:08/April/2015
+------------------
+JSP
+---
+- JSP stands for Java Server Pages
+- JSP is used to separate business logic and presentation logic
+
+Servlets vs JSP
+---------------
+- In Servlets Java code contains HTML code where as in JSP HTML code contains Java Code
+
+JSP Architecture
+----------------
+Two phases
+----------
+- Translation Phase
+    - When a request is made to a JSP page, the JSP page is translated       into servlet only once until the JSP page changes
+
+- Request Processing Phase
+    - Request is processed by the translated servlet
+
+JSP Life Cycle
+--------------
+- jspInit()
+	- called only once when JSP page is loaded
+- _jspService()
+	- called for every request
+	- cannot be overridden
+- jspDestroy()
+	- called only once when JSP page is destroyed
+
+JSP Tags
+--------
+- Directive Tags
+    - page directive  - <%@page .... %>
+    - include directive  - <%@include ... %>
+    - taglib directive  - <%@taglib   ... %> //Custom Tags
+- Scriplets
+    - declaration - <%! ... %>
+    - expression  - <%= ... %>
+    - script      - <%  ... %>
+- Action Tags
+   - <jsp:include>
+   - <jsp:forward>
+   - <jsp:useBean>
+   - <jsp:setProperty>
+   - <jsp:getProperty>
+
+Directive Tags
+--------------
+page directive
+--------------
+  - used to import packages, set content types, handle exceptions etc
+eg:
+	<%@page import = "java.util.*" %>
+	<%@page import = "java.sql.*" %>
+	    or
+	<%@page import = "java.util.*,java.sql.*" %>
+     	<%@page contextType = "text/html" %>
+
+include directive
+-----------------
+  - used to include other jsp or html files
+eg:
+	<%@include file = "header.jsp" %>
+	.....
+	....
+	<%@include file = "footer.jsp" %>
+
+
+Scriplets
+---------
+Declaration Tag 
+----------------
+- <%! .... %>
+- used to declare variables and to define methods
+- the code goes into the class
+eg:
+	<%! int n = 100; %>
+	<%! void xxx()
+	    {
+		...
+		...
+	    }
+	%>
+	<%! void jspInit()
+	    {
+		...
+	    }
+	%>
+
+Expression Tag
+--------------
+- <%=  .... %>
+- used to take the value of variables and to call methods
+- the code goes into _jspService()
+
+eg:
+	<%= n %> <!-- 100 -->
+	<%= xxx() %>
+
+Script tag
+----------
+- <% ... %>
+- used to write any java code 
+- the code goes into _jspService()
+
+eg:
+	<%
+	   for(int i=1;i<=10;i++)
+	  	out.println(i);
+	%>
+
+MyJsp.jsp
+---------
+<%! int n=100; %>
+<%! void xxx()
+    {}
+%>
+<%= n %>
+<%= xxx %>
+<%
+  for(int i=1;i<=10;i++)
+   out.println(i);
+%>
+
+Translated Servlet
+------------------
+public class MyJsp_jsp extends HttpJspBase(HttpJspBase extends HttpServlet)
+{
+   int n=100;
+   void xxx(){}
+   void _jspService()
+   {
+      JspWriter out = response.getWriter();//JspWriter extends PrintWriter
+      out.println(n);
+      xxx();
+      for(int i=1;i<=10;i++)
+	out.println(i); 
+   }
+}
+
+Example Programs
+----------------
+- to find factorial using jsp - Fact.jsp
+
+- Program 2 - Refer diagram color.png
+
+- emp.html & Emp.jsp

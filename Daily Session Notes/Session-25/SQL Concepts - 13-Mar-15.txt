@@ -1,0 +1,199 @@
+Date:13/Mar/2015
+----------------
+SQL
+---
+SQL Stands for Structured Query Language
+
+Database : It is a collection of related tables
+
+Table : It is a collection of data in the form of rows and columns
+
+eg:
+
+Books table
+-----------
+bno | bname | price|  => column names
+--------------------
+111 | Java  |  500 |  => Record/Row
+--------------------
+222 | XML   |  800 |  => Record/Row
+--------------------
+333 | HTML  |  400 |  => Record/Row
+--------------------
+
+SQL Command Types
+------------------
+
+DDL - Data Definition Language       - CREATE, ALTER, DROP,TRUNCATE
+DML - Data Manipulation Language     - INSERT, UPDATE, DELETE
+DQL - Data Query Language            - SELECT
+TCL - Transaction Control Language   - COMMIT, ROLLBACK, SAVEPOINT
+DCL - Data Control Language          - GRANT, REVOKE
+
+
+Data Bases
+-----------
+Oracle
+mysql
+DB/2
+PostGre
+MS Access
+
+Oracle Database
+---------------
+Types
+-----
+ - Oracle Express Edition
+ - Oracle Standard Edition
+ - Oracle Enterprise Edition
+
+To connect to oracle
+
+Programs -> Oracle Application Development -> SQL PLUS
+
+Username:scott
+password:tiger
+
+SQL>
+
+Datatypes in Oracle
+-------------------
+- INT - without decimal points
+- NUMBER - can have decimal points
+- CHAR   - fixed size (eg: name char(10) ) - waste of space
+- VARCHAR/VARCHAR2 - variable size (eg: name varchar(10) - reusable)
+- DATE
+
+
+CREATE TABLE COMMAND
+--------------------
+ - used to create a table with the specified columns
+
+syntax
+------
+CREATE TABLE tablename (columnname-1 Datatype(size),
+    columnname-2 Datatype(size),...columnname-n Datatype(size));
+
+eg:
+CREATE TABLE Books (bno NUMBER(3), bname VARCHAR(10),price NUMBER(4));
+
+DROP TABLE COMMAND
+-----------------
+- used to delete the table
+syntax:
+------
+DROP TABLE tablename;
+eg:
+DROP TABLE Books;
+
+DESC/DESCRIBE Command
+----------------------
+- used to give the structure of the table
+eg:
+DESC Books;
+
+INSERT COMMAND
+--------------
+- used to insert records into the table
+
+syntax
+------
+INSERT INTO tablename VALUES (value1,value2,...valuen);
+   - number of values should be equal to the number of columns of
+     the table
+   
+
+INSERT INTO tablename (column1,column2,..columnn) VALUES
+                 (value1,value2, .. valuen);
+   - number of values should be equal to the number of columns 
+     given in the command
+
+eg:
+INSERT INTO Books VALUES (111,'Java',500);
+INSERT INTO Books (bno,bname) VALUES (222,'xml');
+
+UPDATE COMMAND
+--------------
+ - used to update/modify the existing records
+
+syntax
+------
+UPDATE tablename SET columnname = newvalue,columnname=newvalue,...
+    [WHERE Condition]
+
+eg:
+UPDATE Books SET price=700; //all records price value will be 700
+UPDATE Books SET price=800 WHERE bno=222;
+
+TCL Commands
+------------
+- COMMIT
+    - used to save the transactions
+        >COMMIT
+
+- ROLLBACK
+    - used to undo the uncommitted transactions
+ 	>ROLLBACK
+
+DELETE Command
+--------------
+ - used to delete the existing records
+
+syntax
+------
+DELETE FROM tablename [WHERE Condition];
+
+eg:
+DELETE FROM Books; //all records will get deleted
+DELETE FROM Books WHERE bno=222;
+DELETE FROM Books WHERE price>=500 and price<=700;
+
+TRUNCATE Command
+----------------
+- used to delete all the records of the table
+
+syntax
+------
+TRUNCATE TABLE tablename;
+
+eg:
+TRUNCATE TABLE Books;
+
+Q:
+What is the difference between DELETE FROM Books and TRUNCATE TABLE Books ?
+
+A: DELETE Command can be rollback where as TRUNCATE command cannot be rollback
+
+Note:
+All DDL commands are auto committed
+
+ALTER TABLE command
+-------------------
+ used for the following
+    - rename the table
+    - add new columns
+    - modify existing columns
+    - rename columns
+    - drop columns
+
+eg:
+Rename table
+------------
+ALTER TABLE Books RENAME to tempbooks;
+ALTER TABLE tempbooks RENAME to Books;
+
+Add new Columns
+---------------
+ALTER TABLE Books ADD author VARCHAR(10);
+
+Modify Existing columns
+-----------------------
+ALTER TABLE Books MODIFY bname VARCHAR(15);
+
+Rename columns
+--------------
+ALTER TABLE Books RENAME COLUMN bname to BookName;
+
+Drop columns
+-------------
+ALTER TABLE Books DROP COLUMN author;

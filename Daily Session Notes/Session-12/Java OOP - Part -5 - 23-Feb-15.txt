@@ -1,0 +1,61 @@
+Date:23/Feb/2015
+----------------
+Packages
+--------
+- A package is a collection of related classes and interfaces(.class files)
+- package keyword is used to create a package
+   eg:
+   package mypack;
+- package statement should be the first statement in the source code file
+    eg:
+    X.java
+    ------
+    package mypack;
+    import ...
+    import ...
+    class A{}
+    class B{}
+
+- In a source code file we can have only one package statement
+- The classes under the package are stored in a folder whose name is same as the package name
+- Only public class/members(*) are accessible outside the package
+- To use the classes of one package into another we need to import the package
+   eg:
+   import mypack.A;
+   import mypack.B;
+     or
+   import mypack.*;//* indicates all classes
+
+Predefined packages
+-------------------
+- java.lang
+- java.util
+- java.io
+- java.sql
+
+ Refer programs Calculator.java and PackageDemo.java
+
+Access Modifiers
+----------------
+- private
+     - A class cannot be private
+     - accessible only with in class
+- default (no need to specify)
+     - A class can be default
+     - accessible only with in package
+- protected
+     - A class cannot be protected
+     - accessible with in package and sub class another package
+- public
+     - A class can be public
+     - Accessible every where
+     - If the class is public then the name of the source code file
+       should be same as the class name
+     - In a source code file we can have only one public class
+
+Inventory Demo
+--------------
+  - Refer program ArrayListDemo.java, InventoryDemo1.java &     InventoryDemo2.java
+
+
+

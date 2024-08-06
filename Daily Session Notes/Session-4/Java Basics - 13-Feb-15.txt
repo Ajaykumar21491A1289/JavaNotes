@@ -1,0 +1,192 @@
+Date:13/Feb/2015
+----------------
+Control Statements
+------------------
+These statements are used to control the flow of execution of program.
+
+Types
+-----
+- if statement
+- switch statement
+- while loop
+- do .. while loop
+- for loop
+- break and continue
+- labelled break and continue (added in Java)
+
+if statement
+------------
+if statement is used to execute set of statements when the condition is true. If the condition is false, it will execute set of statements present in else part
+
+syntax:
+------
+if (condition)
+{
+   st-1;
+   st-2;
+   ..  
+   st-n;
+}
+else
+{
+   st-1;
+   st-2;
+   ...
+   st-n;
+}
+
+- else is optional for if and for else if is mandatory
+- if {} are not used then it considers only one statement
+
+eg:
+int n1=10;
+int n2=15;
+if (n1 > n2)
+   SOP("Big="+n1);
+else
+   SOP("Big="+n2);
+
+WAP to check whether the given number is even or odd.
+  - Refer program EvenOdd.java
+
+Nested if
+---------
+if within if is called as nested if
+
+syntax
+------
+if (condition)
+{
+   sts;
+}
+else
+  if (condition)
+  {
+	sts;
+  }
+  else
+    if (condition)
+    {
+	sts;
+    }
+    else
+    {
+	sts;
+     }
+
+WAP to check whether the given number is Positive, negative or zero
+
+ - Refer the program CheckNumber.java
+
+
+1.
+int n1=10;
+int n2=5;
+if (n1 > n2)
+   SOP("Big="+n1);
+   SOP("Big="+n2);
+
+output
+------
+Big=10
+Big=5
+
+2. 
+int n1=10;
+int n2=5;
+if (n1 > n2);
+  SOP("Big="+n1);
+  SOP("Big="+n2);
+
+output
+------
+Big=10
+Big=5
+
+3. 
+int n1=10;
+int n2=5;
+if (n1 > n2);
+   SOP("Big="+n1);
+else
+   SOP("Big="+n2);
+
+Output
+------
+Error - else without if
+
+4. 
+int n1=10;
+int n2=5;
+if (n1 > n2)
+   SOP("Big="+n1);
+   SOP("xx");
+else
+   SOP("Big="+n2);
+
+output
+------
+Error - else without if
+
+
+- WAP to find the biggest of 3 numbers
+   Refer program BigThree.java
+
+Assignment
+----------
+WAP to accept itemno,itemname,rate and quantity. 
+Find price (rate * qty).
+Calculate discount as follows
+   if (price >= 100 and < 200)
+	dis is 10% on price     
+ program: if (price>=100 && price<200)
+	    dis = 0.10 * price;
+  
+   if (price >=200 and < 300)
+	dis is 15% on price
+   if (price >= 300 and price < 500)
+	dis is 20% on price
+    if (price >= 500)
+	dis is 25% on price
+
+Find netprice (price-dis)
+Display itemno,itemname, price, discount,and netprice
+
+Switch statement
+----------------
+- It is used to choose an option among the given set of options
+- It is used for menu driven applications
+
+syntax
+------
+switch (expn)
+{
+   case opt1:sts;break;
+   case opt2:sts;break;
+   case opt3:sts;break;
+   ...
+   ...
+   case optn:sts;break;
+   default:sts;
+}
+
+Points on Switch
+-----------------
+- if expn is not matching with any one of the options, it will execute the statements present in default
+- default is optional
+- default can be anywhere in the options
+- break is used to come out of switch
+- if break is not used then it will execute the statements of other options until break
+- the expn should be of type int (byte|short|char)
+- From Java 7 the expn can be String
+
+WAP to accept two numbers and display the following options
+
+1. Add
+2. Subtract
+3. Multiply
+4. Divide
+
+Display result based on the user choice
+
+- Refer Calculator.java

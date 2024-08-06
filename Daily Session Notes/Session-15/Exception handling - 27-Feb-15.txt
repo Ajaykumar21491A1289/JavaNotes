@@ -1,0 +1,77 @@
+Date:27/Feb/2015
+----------------
+Exception Handling
+------------------
+Types of errors
+---------------
+- compile time or syntax errors
+- Logical errors or symantic errors
+    eg:
+    for(int i=1;i<10;i++)
+      sum = sum + i;
+- Runtime errors or exceptions
+
+- An exception is a runtime error which occurs during program execution
+and terminates the program abnormally
+- Exception Handling is used to avoid abnormal termination of program
+- Exception Handling is used to make the program robust.
+
+Five keywords in exception handling
+-------------------------------------
+blocks
+------
+  - try
+  - catch
+  - finally
+clauses
+------
+  - throw
+  - throws
+
+
+try and catch block
+-------------------
+syntax
+------
+try
+{
+  st-1;
+  st-2;
+  ...
+  st-n;
+}
+catch(Exception e)
+{
+  //handle the exception
+}
+
+- If an exception occurs in try block, Java runtime throws an exception and it is caught by catch block and handles the exception by catch block and remaining statements of try block will not get executed
+
+Exception Hierarchy
+-------------------
+ see the diagram Exception hierarchy.png
+
+Categories of Exceptions
+------------------------
+checked exceptions
+------------------
+Other than Runtime exceptions are checked exceptions like IOException,SQLException etc
+
+unchecked exceptions
+--------------------
+All Runtime Exceptions are unchecked exceptions like ArithmeticException, ArrayIndexOutOfBoundsException etc 
+
+Any Exception occurs during runtime is a sub class of RuntimeException
+
+Runtime exception
+--------------------------------
+1)Arithmetic exception          -divided by zero
+2)ArrayindexoutOfBoundException  -access element out of index
+3)StringIndexOutOfBoundException  -access when element out of index
+4)NegativeArraySizeException      -when we initialize with negative index
+5)NumberFormatException           -when we try to convert  a string to a numeric which is not possible.
+6)NullPointerException           -any obect pointing to null by using that object if you access method of String class then is throw exception
+Note:
+----
+If a method throws an exception then this method need to be caught (try&catch) or declared to be thrown (throws)
+

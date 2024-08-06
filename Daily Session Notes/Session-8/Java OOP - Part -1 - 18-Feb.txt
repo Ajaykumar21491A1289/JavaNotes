@@ -1,0 +1,97 @@
+Date:18/Feb/2015
+----------------
+Java OOP
+--------
+- classes and objects
+- Constructors
+- static keyword
+- Inheritance
+- Polymorphism - overloading and overriding
+- final keyword
+- abstract classes and interfaces
+- packages
+- Inner classes
+
+Classes and Objects
+-------------------
+class:
+-----
+A class is a collection of data members and methods
+eg:
+class Employee
+{
+  //Data members
+   int empNum;
+   String empName;
+   double empSalary;
+  //Methods
+   void setEmpDetails()
+   {
+	...
+   }
+   void dispEmpDetails()
+   {
+	...
+   }
+}
+
+Object
+------
+- An instance of a class is called as object
+- The members of the class are accessed by using objects with dot(.)
+  operator
+
+Creating Objects
+----------------
+syntax
+------
+ClassName objName = new ClassName();
+
+eg:
+Employee e = new Employee();
+
+e.empNum = 111;
+e.empName = "Raj";
+e.setEmpDetails();
+
+this reference
+--------------
+- this refers to the current object
+- this reference is generally used to differentiate data members of a class and arguments of a method when the names are same
+
+- Refer program EmployeeDemo.java
+
+Constructors
+------------
+- A constructor is a special method whose name is same as the class name which is used to initialize the object and does not return anything not even void
+- In Java objects are created using constructors
+eg:
+class Sample
+{
+   int i;
+   int j;
+   Sample() //Constructor
+   {
+ 	i = 10;
+	j = 20;
+   }
+   
+}
+Sample s = new Sample();
+SOP(s.i+" "+s.j);//10 20 
+
+Points on constructors
+----------------------
+- If a class does not contain a constructor java provides the default constructor.
+  eg:
+  class Sample
+  {
+     Sample(){} //default constructor - added implicitly
+  }
+- If a class contains a parameterized constructor then it is the responsibility of the programmer to create default constructor
+- For a top level class (outer class) we can give only default and public as access modifiers
+- The access modifier given to the default constructor is same as the modifier given to the class
+- A constructor can be private but the object of the class need to be created with in class
+- If a method name is same as the class name with return type then this method is treated as ordinary method but not as constructor.
+
+Refer program ConstructorDemo.java

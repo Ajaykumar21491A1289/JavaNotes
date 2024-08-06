@@ -1,0 +1,13 @@
+
+public class StringBufferDemo {
+
+	public static void main(String[] args) {
+		final StringBuffer sb = new StringBuffer("Hello");
+		sb.append("World");
+		System.out.println(sb);//HelloWorld
+		StringBuffer sb1 = new StringBuffer("Welcome");
+		//sb = sb1;//Error
+		
+	}
+
+}

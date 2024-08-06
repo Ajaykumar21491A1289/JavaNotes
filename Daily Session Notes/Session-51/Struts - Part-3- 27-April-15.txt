@@ -1,0 +1,36 @@
+Date:27/April/2015
+------------------
+Generic Tags
+-------------
+by using generic tags we can do the following
+  - check a condition
+  - Iterating
+  - Generating
+  - Iterating Lists
+  - Appending Lists
+
+
+Refer the following programs
+  - IterateAction.java
+  - generic.jsp
+  - Iterator.jsp
+  - struts.xml
+
+Struts2 Validations
+-------------------
+Validations means check whether the input given by the user is valid for the action property or not.
+
+Before the value is given to the property of action class by calling setter methods, the value should be validated againt the given rule.
+
+Creating Validation file
+------------------------
+If the name of the action class is XXXAction.java then the validation file name should be XXXAction-validation.xml
+
+Refer the following programs
+---------------------------
+ - AddEmployeeAction.java
+ - AddEmployee-validation.xml(same package where action class is present)
+ - addemployee.jsp
+ - employee.jsp (result)
+ - validations.xml
+ - struts.xml (updated)

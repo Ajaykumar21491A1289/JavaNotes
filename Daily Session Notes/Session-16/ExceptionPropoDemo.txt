@@ -1,0 +1,26 @@
+class ExceptionPropoDemo
+{
+   public static void main(String[] args)
+   {
+      try
+      {
+	 method1();
+      }
+      catch(Exception e)
+      {
+	System.out.println("Exception Handled in main()");
+      }
+   }
+   static void method1()
+   {
+     
+	method2();
+     
+   }
+   static void method2()
+   {
+	
+	   int n=10/0;
+        
+   }
+}

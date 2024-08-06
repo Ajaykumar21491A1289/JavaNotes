@@ -1,0 +1,85 @@
+Date:28/April/2015
+------------------
+ValueStack and OGNL
+-------------------
+The value stack is a set of several objects
+
+ValueStack stack = ActionContent.getContext().getValueStack();
+
+OGNL Stands for Object Graph Navigation Language is a expression language which is used to reference and manipulate data on value stack
+
+Refer programs
+--------------
+ - OGNLAction.java
+ - ognl.jsp
+ - HelloWorld1.jsp
+ - struts.xml
+
+
+Hibernate
+---------
+Hibernate is an ORM Framework
+
+ORM Stands for Object Relational Mapping
+
+Refer diagram ORM.png
+
+Hibernate not only takes care of the mapping from java classes to database tables but also provides data query(HQL) and retrival facilities
+
+Cons of JDBC
+------------
+- Complex if it is used large projects
+- No encapsulation
+- Query is DBMS Specific
+
+Advantages of ORM 
+-----------------
+- lets business code access objects rather than DB tables
+- Hides details of SQL queries from OO logic
+- Based on JDBC 'under the hood'
+- Entities based on business concepts rather than database structure
+- Transaction Management and automatic key generation
+- Fast development of application
+
+Java ORM Frameworks
+-------------------
+- Hibernate
+- EJB Entity Beans (replaced with JPA)
+- Java Data Objects
+- Castor
+- TopLink
+- JBatics
+
+Hibernate Introduction
+----------------------
+Hibernate is a ORM framework created by Gavin King in 2001.
+
+Hibernate sits between Java Objects and data base server 
+    Refer diagram hibernate1.png
+
+Hibernate Advantages
+--------------------
+- Hibernate takes care of mapping Java classes to database tables using XML files and without writing any line of code
+- Provides simple APIs for storing and retrieving Java Objects directly to and from the data base
+- If there is change in Database or in any table then the only need to change XML file properties
+- Hibernate does not require any server to operate
+- Associations are simple by using hiberate
+
+Hibernate Architecture
+----------------------
+Refer digram Hibernate Architecture.png
+
+Refer diagram Detailed Hibernate Architecture.png
+
+Steps in Hibernate Application
+-------------------------------
+- Create Configuration Object
+- Configure the Hibernate properties file (Hibernate Configuration file) using Configuration object
+- Build SessionFactory using configuration object
+- Open Session using SessionFactory object
+- Begin Transaction using Session object
+- Create object for POJO class
+- Save the object using Session object
+- Commit the trasaction
+- Close the Session
+

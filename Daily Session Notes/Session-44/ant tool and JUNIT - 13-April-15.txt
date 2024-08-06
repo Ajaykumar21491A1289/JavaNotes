@@ -1,0 +1,47 @@
+Date:13/April/2015
+------------------
+ant tool 
+--------
+ant tool is a build tool from Apache
+
+We do the following by using ant tool
+  - compile java programs
+  - creating folders
+  - creating packages and storing the .class files in the respective     packages
+  - creating jar files
+
+Downloading ant tool
+--------------------
+  Use the below link to download
+https://ant.apache.org/bindownload.cgi
+
+Example 1
+---------
+HelloWorld.java
+build.xml
+
+Note:
+-----
+To use ant tool copy tools.jar of JAVA_HOME\lib folder into 
+d:\PF\Java\jre8\lib folder
+
+To run the ant tool type ant at command prompt which will run build.xml file and executes the targets present in build.xml file
+
+Example 2
+---------
+Create HelloWorld.java in d:\Java-online-2\ant\Example2\src\raj\helloworld
+
+Create build.xml
+
+
+JUNIT tool
+----------
+JUNIT is a unit testing tool
+
+Checking whether the methods of a class are giving correct outputs/results
+
+In Unit testing we compare the expected output with the actual output
+
+If the expected output and actual output are equal then JUNIt will draw a green bar else it will draw red bar along with the error messages.
+
+

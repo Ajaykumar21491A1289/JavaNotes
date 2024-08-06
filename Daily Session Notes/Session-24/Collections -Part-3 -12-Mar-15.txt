@@ -1,0 +1,75 @@
+Date:12/Mar/2015
+----------------
+Comparator interface
+--------------------
+This interface is used to arrage the elements in TreeSet.
+interface Comparator
+{
+   int compare(Object,Object);
+}
+class TreeSet implements Comparator
+{
+   int compare(Object, Object){}
+}
+Refer program ComparatorDemo.java
+
+
+Map interface
+-------------
+- used to collect the elements in the form of key-value pairs
+
+key-value pairs examples
+-------------------------
+In mobile : contact name (key) and contact no(value)
+
+Dictionary : word (key) and meaning(value)
+
+In Map duplicate keys are not allowed but duplicates values are allowed
+
+Refer program MapDemo.java
+
+
+Iterating Maps
+--------------
+Steps
+-----
+ - As we cannot apply Iterator for Map we need to convert Map into Set
+
+       Set s = hm.entrySet();
+
+   entrySet() is used to convert Map into Set
+
+- Apply Iterator on Set
+     Iterator iter = s.iterator();
+
+- Traverse Iterator
+    while (iter.hasNext())
+       SOP(iter.next());
+
+Map.Entry
+---------
+This interface is used to take the keys and values separately
+
+Methods
+-------
+Object getKey()
+Object getValue()
+
+Refer program IteratorMap.java
+
+utility classes
+---------------
+- Arrays
+- StringTokenizer
+- Date
+
+Arrays class
+------------
+Arrays class is used to arrage the elements in sorted order and search an element in the array
+
+Methods
+-------
+static void sort(Object[])
+static int binarySearch(Object[],object)
+
+Refer program ArraysDemo.java

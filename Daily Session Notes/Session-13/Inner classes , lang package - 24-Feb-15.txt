@@ -1,0 +1,137 @@
+Date:24/Feb/2015
+----------------
+Inner classes
+-------------
+A class with in a class is called as inner class
+Inner classes are used to have more encapsulation (security)
+
+Types
+-----
+- Regular inner class
+- Method local inner class
+- static inner class
+- Anonymous inner class
+
+Regular inner class
+-------------------
+eg:
+class Outer
+{
+   class Inner
+   {
+     ....
+   }
+}
+
+Refer program InnerDemo1.java
+
+Method local inner class
+------------------------
+Inner class is created within a method of outer class
+eg:
+class Outer
+{
+   void doStuff()
+   {
+	class Inner
+	{
+	  ..
+        }
+   }
+}
+The object of inner class is created with in the method
+
+Refer program InnerDemo2.java
+
+static inner class
+------------------
+If the inner class is static
+
+eg:
+class Outer
+{
+   static class Inner
+   {
+	...
+   }
+}
+The object of static inner class is created without using the object of outer class
+Refer program InnerDemo3.java
+
+Anonymous Inner class
+----------------------
+No name to the inner class
+
+Refer program InnerDemo4.java
+
+java.lang package
+-----------------
+- java.lang package is imported to all java programs implicitly
+
+Classes
+-------
+- Object
+- String
+- StringBuffer
+- StringBuilder
+- System
+Wrapper classes
+---------------
+- Byte
+- Short
+- Character
+- Integer
+- Long
+- Float
+- Double
+- Boolean
+
+Object class
+------------
+- Object class is the top most class sitting in Java Hierarchy means any class in Java is a sub class of Object class
+- Object class is also known as Cosmic super class
+
+11 Methods in Object class
+--------------------------
+1. clone()
+     - used to create a duplicate object
+	eg:
+	Emp e = new Emp();
+	Emp e1 = e.clone();
+2. equals()
+     - used to compare the hashcodes of two objects
+	eg:
+	SOP(e.equals(e1));//true
+3. finalize()
+     - used to do the cleanup operations like closing of files,        Database connections
+     - finalize() is called just proir to the garbage collection
+	eg:
+	public void finalize()
+	{
+	    out.close();
+	    con.close();
+	}
+4. getClass()
+	- used to return the class name of an object
+	eg:
+	SOP(e.getClass());//Emp
+5. hashCode()
+	- used to return the hash code of an object
+	eg:
+	SOP(e.hashCode());//6564534
+6. toString()
+	- returns the class name of object along with hashcode
+	- used to represent an object in String format
+	Refer program ToStringDemo.java
+7. wait()
+8. wait(long)
+9. wait(long,int)
+10. notify()
+11. notifyAll()
+
+String class
+------------
+- A String is a collection of characters
+- In Java String is immutable (like a constant)
+
+Refer diagram String.png

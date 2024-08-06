@@ -1,0 +1,62 @@
+Date:06/April/2015
+------------------
+Session Tracking
+----------------
+4 ways of Session Tracking
+-------------------------
+- Hidden form fields - HiddenForm.html, FirstWorld.java, SecondWorld.java
+- URL Rewriting- URL.html,URLFirstWorld.java, URLSecondWorld.java
+- Cookies
+- HttpSession
+
+Cookies
+-------
+- Cookies are used to remember the user
+- Cookies are stored on the client browser
+
+Creating Cookies
+---------------
+Cookie CookieObj = new Cookie("cookie name","cookie Value");
+eg:
+Cookie c1 = new Cookie("username","admin");
+response.addCookie(c1);
+
+Reading Cookies
+---------------
+Cookie[] cookies = request.getCookies();
+for(Cookie c : cookies)
+  out.println(c.getName()+":"+c.getValue());
+
+Refer programs
+-------------
+- user.html
+- CreateCookieServlet.java
+- ReadingCookieServlet.java
+
+
+HttpSession
+-----------
+- HttpSession interface is used to track the session using session attributes
+
+Begin the session
+-----------------
+HttpSession session = request.getSession();
+
+Setting session Attributes
+-------------------------
+session.setAttribute("attribute-name","attribute-value");
+
+Getting session Attributes
+--------------------------
+session.getAttribute("attribute-name");
+
+Invaliding Session
+------------------
+session.invalidate();
+
+Refer programs for HttpSession
+-------------------------------
+- session.html
+- HttpSessionPage1.java
+- HttpSessionPage2.java
+

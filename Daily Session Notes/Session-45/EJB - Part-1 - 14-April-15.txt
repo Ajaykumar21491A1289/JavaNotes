@@ -1,0 +1,63 @@
+Date:14/April/2015
+------------------
+EJB
+---
+- EJB stands for Enterprise Java Beans
+
+Java Bean
+---------
+It is a model class which contains private properties and public setters and getter methods for every property.
+
+In EJB, for a Java Beans it provides the features like Transaction Management, Security, Caching, logging
+
+By using EJB we can develop distributed applications and any client can access an EJB application
+
+   Refer diagram ejb1.png
+
+In EJB the programmer will take care of only bussiness logic and the underlying features (cross cutting features) like Transaction Management, Security etc are taken care by EJB container
+
+EJB 2.x vs EJB 3.x
+------------------
+EJB 2.x
+-------
+- Remote interface, Home interface, Bean class
+- Configuration files like ejb_jar.xml and jboss.xml
+- Client program
+- Bean class implements SessionBean interface means we need to override the following methods in Bean class
+    - ejbCreate()
+    - ejbActivate()
+    - ejbPassivate()
+    - ejbRemove()
+    - setSessionContext()
+
+EJB 3.x
+-------
+- Remote interface and Bean class 
+- No need to create Home interface
+- Bean class does not implements SessionBean
+- Client program
+- Need not create configurations files and EJB3.x uses annotations
+
+Types of EJB
+------------
+- Session Beans
+      - Stateless Session Bean
+      - Stateful Session Bean
+- Entity Beans
+      - Bean Managed Persistence (BMP)
+      - Container Managed Persistence (CMP)
+      
+- Message Driven Beans
+    - used to send the messages asynchronuously
+
+Note:
+----
+In EJB 3.x Entity Beans are replaced with JPA (Java Persistence API)
+
+Do develop EJB application we require an Application Server (JBOSS)
+ use the following link to download JBOSS server
+  
+    http://jbossas.jboss.org/downloads/
+
+
+JNDI stands for Java Naming Directory Interface which is used to refer the Bean class from the client program

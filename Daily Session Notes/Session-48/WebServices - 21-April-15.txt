@@ -1,0 +1,30 @@
+Date:21/April/2015
+------------------
+Web Services
+------------
+- Web Services are open standard (XML, SOAP, HTTP) based web applications that interact with other web applications for the puspose of exchanging data
+
+- Web Services is a distributed technology achieves interoperability (portability) across different technologies like JAVA, .Net,PHP etc
+- Web Services are used for language independent
+
+- The other distributed technologies like EJB, RMI, DCOM etc uses binary format hence these applications are used in the respective language only
+
+- Web services uses XML format and data is exchanged as XML message which is validated against XSD(XML Schema) but not DTD (Document Type Definition) since XSD support data types
+
+- In Web Servies, the objects are serialized into XML messages
+
+
+Components of Web Services
+--------------------------
+ - SOAP (Simple Object Access Protocol)
+ - UDDI (Universal Description Discovery and Integration)
+ - WSDL (Web Services Description Language)
+
+
+Architecture of Web Service
+---------------------------
+Refer diagram Web Service Architecture.png
+
+Developing a Web Service Application using Apache Axis Tool
+-----------------------------------------------------------
+- Refer Web Services Document

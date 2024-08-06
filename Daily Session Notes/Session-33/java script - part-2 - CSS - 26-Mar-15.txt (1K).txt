@@ -1,0 +1,6 @@
+[InternetShortcut]
+URL=https://mail.google.com/mail/u/0/?ui=2&ik=81902f0666&view=att&th=14c5acd6d8583b6b&attid=0.4&disp=safe&realattid=f_i7qdjwq03&zw
+IDList=
+HotKey=0
+IconFile=C:\Users\OBIEE10g\AppData\Local\Mozilla\Firefox\Profiles\16qntao5.default\shortcutCache\WRQdX_et5Szh8O9urgdg9A==.ico
+IconIndex=0

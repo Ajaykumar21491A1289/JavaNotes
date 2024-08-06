@@ -1,0 +1,47 @@
+Date:30/Mar/2015
+----------------
+
+When we run a Servlet in eclipse, it opens the following url
+
+http://localhost:8080/WebProj/WelcomeServlet
+
+http: -> protocal
+
+localhost -> tomcat server is present in the same machine
+8080 -> port no where tomcat server is running
+WebProj -> Project Name (Web Application)
+WelcomeServlet -> url pattern
+
+When we make a request to a servlet, first it loads a file called as web.xml present in Web Application (WebProj)
+
+web.xml file is called as deployment descriptor/configuration file
+
+web.xml
+-------
+<web-app> <!-- root tag -->
+   <servlet>
+      <servlet-name>Welcome</servlet-name>
+      <servlet-class>WelcomeServlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>Welcome</servlet-name>
+      <url-pattern>/wel</url-pattern>
+   </servlet-mapping>
+</web-app>
+
+url :http://localhost:8080/WebProj/wel
+
+Note:
+-----
+In a Web application we can have only one web.xml file.
+
+Location of web.xml in WebProj
+------------------------------
+WebProj->WebContent->WEB-INF->web.xml
+
+Including HTML code in Servlets/Sending response in the form HTML
+-----------------------------------------------------------------
+response.setContent("text/html") method is used to send the response in the form of HTML to the client browser
+
+
+

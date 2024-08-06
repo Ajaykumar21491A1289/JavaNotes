@@ -1,0 +1,29 @@
+Date:04/Mar/2015
+----------------
+Multiple threads in a program
+-----------------------------
+Refer program ThreadDemo2.java
+
+Note:
+----
+- If start() is invoked multiple times on a thread, then it throws 
+IllegalThreadStateException
+- If an exception occurs during runtime, it terminates the thread not the program
+join()
+------
+- join() is used between parent thread and child thread
+- When join() is invoked on a thread, then until this thread completes the run() the other threads will not use cpu resource.
+
+yield()
+-------
+- When yield() is called on a thread, then it will give a chance to other thread with the same priority to use cpu resource
+- If there is not thread with same priority, then the current thread will continue using the cpu resource
+
+Refer diagram yield.png
+
+
+
+Creating Threads using Runnable interface
+-----------------------------------------
+Refer the program RunnableDemo.java
+

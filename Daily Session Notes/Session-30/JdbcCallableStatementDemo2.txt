@@ -1,0 +1,24 @@
+//To call procedure
+import java.sql.*;
+public class JdbcCallableStatementDemo2 {
+	public static void main(String[] args) {
+		try
+		{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","scott","tiger");
+			CallableStatement st = con.prepareCall("{call  getprice(?,?)}");
+			st.registerOutParameter(2,Types.INTEGER);
+			st.setInt(1,111);
+			st.execute();
+			int price = st.getInt(2);
+			System.out.println("Price = "+price);
+			st.close();
+			con.close();
+		}catch(Exception e)
+		{
+			System.out.println(e);
+		}
+
+	}
+
+}

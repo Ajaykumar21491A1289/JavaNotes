@@ -1,0 +1,210 @@
+Date:14/Feb/2015
+----------------
+Loops 
+-----
+Loops are used to execute the set of statements repeatedly when the condition is true.
+
+Types
+-----
+- while loop
+- do..while loop
+- for loop
+
+while loop
+----------
+syntax
+------
+while (condition)
+{
+   st-1;
+   st-2;
+   st-3;
+   ...
+   st-n;
+}
+
+eg:
+1 2 3 ... 9 10
+
+int i=1;
+while (i<=10)
+{
+   SOP(i);
+   i++;
+}
+
+do..while loop
+--------------
+syntax
+------
+do
+{
+   st-1;
+   st-2;
+   ...
+   st-n;
+}while(condition);
+
+eg:
+1 2 3 ... 9 10
+
+int i=1;
+do
+{
+   SOP(i);
+   i++;
+}while(i<=10);
+
+difference between while loop and do..while loop
+-------------------------------------------------
+- In while loop condition is checked before the statements where as in do..while loop condition is checked after the statements
+- In while the minimum no of executions of statements is zero where as in do..while loop the minimum of execution of statements is one
+
+eg:
+
+/*while loop */
+
+int n,sum=0;
+read n;
+while (n != 0)
+{
+   sum = sum + n;
+   read n;
+}
+print sum;
+
+
+/* do..while loop */
+int n,sum=0;
+do
+{
+   read n;
+   sum = sum + n;
+}while (n != 0);
+print sum;
+
+Note:
+----
+If the value of condition is known in the loop statements then it is suggested to use do..while loop
+
+for loop
+--------
+syntax
+------
+for(initialization;condition;expression)
+{
+   st-1;
+   st-2;
+   ...
+   st-n;
+}
+eg:
+1 2 3 ... 9 10
+for(int i=1;i<=10;i++)
+   SOP(i);
+
+eg2:
+for(int i=1;i<=10;i++);
+  SOP(i);
+
+output
+------
+error - cannot find symbol i
+
+eg3:
+int i;
+for(i=1;i<=10;i++);
+  SOP(i);
+
+output
+------
+11
+
+WAP to find sum of given 10 numbers
+   - Refer the program SumTen.java
+
+WAP to find sum of digits of a given number
+   eg:
+   n = 1234 sum of digits = 1+2+3+4 = 10
+
+  logic
+  -----
+   n=1234,sum=0
+   
+   r = n % 10; r=1234 % 10 = 4
+   sum = sum + r; sum=0+4 = 4
+   n = n/10;n=1234/10 = 123
+   ---------------------------
+   r = n % 10; r=123 % 10 = 3
+   sum = sum + r; sum=4+3=7
+   n=n/10; n=123/10 =12
+   ----------------------------
+   r = n%10;r=12%10 =2
+   sum=sum+r;sum=7+2=9
+    n=n/10;n=12/10=1
+   -----------------------
+   r=n%10;r=1%10=1
+   sum=sum+r;sum=9+1=10
+   n=n/10;n=1/10=0
+
+   Refer the program SumDigit.java
+
+WAP to display multiplication table for a given number
+
+  n=5
+  5 * 1 = 5
+  5 * 2 = 10
+  ...
+  5 * 9 = 45
+  5 * 10 = 50
+
+  Refer program MTable.java
+
+WAP to accept current balance and display the following menu
+
+1. Deposit
+2. Withdraw
+3. Display balance
+4. Exit
+
+The menu should display repeatedly until the user chooses exit
+
+- Refer program Bank.java
+
+
+break and continue
+------------------
+- break is used to come out of loop
+- continue is used to continue the loop
+
+eg:
+int n,sum=0;
+while(true)
+{
+  read n;
+  if (n == 0)
+	break;
+  sum = sum + n;
+}
+
+continue ex
+-----------
+1 2 3 4 6 7 8 9 10
+
+int i=1;
+while(i<=10)
+{
+  if (i == 5)
+   {
+	i++;
+	continue;
+   }
+  SOP(i);
+  i++;
+}
+
+Assignments
+-----------
+- WAP to find biggest of 10 numbers
+- WAP to find the factorial of a given number
+- WAP to check whether the given number is prime or not

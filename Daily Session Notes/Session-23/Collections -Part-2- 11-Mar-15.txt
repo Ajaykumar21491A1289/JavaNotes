@@ -1,0 +1,55 @@
+Date:11/Mar/2015
+----------------
+Stack class
+-----------
+Stack is used to collect the elements in the form of Last In First Out(LIFO) operations
+
+Methods
+-------
+- Object push(Object)
+- Object pop()
+- Object peek()
+- boolean empty()
+
+Stack Overflow
+--------------
+- pushing an element into the stack when the stack is full
+
+Stack underflow
+---------------
+- poping an element from the stack when the stack is empty
+
+Refer program StackDemo.java
+
+
+Vector
+------
+The methods are Vector class are synchronized
+
+Enumeration interface
+----------------------
+- This interface is used to traverse the elements of list/set
+- The methods in Enumeration are synchronized
+
+Methods
+-------
+- boolean hasMoreElements()
+- Object nextElement()
+
+Refer program VectorDemo.java
+
+Using Generics in Collections
+-----------------------------
+eg:
+ArrayList<String> al = new ArrayList<String>();
+
+Refer program UsingGenerics.java
+
+
+Set interface
+-------------
+- Set is used to collect the elements and it is unordered and does not allow duplicate elements
+
+Refer program SetDemo.java
+
+How TreeSet works? Refer diagram treeset.png

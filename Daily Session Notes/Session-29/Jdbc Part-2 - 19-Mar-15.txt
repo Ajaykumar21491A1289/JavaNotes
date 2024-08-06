@@ -1,0 +1,29 @@
+Date: 19/Mar/2015
+-----------------
+Type 1 Refer program JdbcType1Demo.java
+Type 4 Refer program JdbcType4Demo.java
+
+Note:
+-----
+To use Type4 driver for Oracle we need to set the classpath to ojdbc14.jar to the Project(MyProj) in eclipse as follows
+
+  Right Click on MyProj->Build Path->Configure Build Path->
+  Click on Tab Libraries -> Click on Add External jars ->
+  Browse the file ojdbc14.jar and click Open -> Click Ok
+
+Statement interface
+--------------------
+Refer program JdbcStatementDemo.java
+
+Batch Updates
+--------------
+It is used to reduce the network trafic between java program and database by executing the sql commands as a batch
+
+Refer program JdbcBatchUpdateDemo.java
+
+PreparedStatement interface
+---------------------------
+ used to give dynamic values to the SQL command
+
+Refer program JdbcPreparedStatementDemo.java
+

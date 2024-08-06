@@ -1,0 +1,137 @@
+Date:11/Feb/2015
+----------------
+Developing a Java Application at command prompt
+-----------------------------------------------
+- Open command prompt by typing cmd in start->Run
+     c:\>d:
+     d:\>
+- Create a folder/directory "JavaPrograms" as follows
+    d:\>md JavaPrograms
+    md make directory
+- Change the folder to "JavaPrograms" as follows
+    d:\>cd JavaPrograms
+    d:\JavaPrograms>
+- Set the path to JAVA_HOME\bin folder
+   d:\JavaPrograms>set path=D:\Program Files\Java\jdk1.8.0\bin;%path%;
+   %path% means appending previous path setting
+- Create a file Welcome.java as follows
+   d:\JavaPrograms>notepad Welcome.java
+- Type the following code in Welcome.java
+ //to display Welcome message onto the screen
+  class Welcome
+  {
+    public static void main(String[] args)
+    {
+	System.out.println("Welcome");	
+    }
+  }
+  Note:Save the file (ctrl+s)
+- Compile Welcome.java as follows
+   d:\JavaPrograms>javac Welcome.java
+    creates a file Welcome.class (bytecode)
+- Run Welcome.class as follows
+    d:\JavaPrograms>java Welcome
+   will displays "Welcome" message onto the screen
+
+Setting path permanently
+-------------------------
+Right Click on Computer->Properties ->Click on Advanced System Settings
+->Click on Environment Variables->Click on New
+
+   Variable Name : path
+   Variable Value : D:\Program Files\Java\jdk1.8.0\bin
+
+Click Ok
+
+Explanation of First Java Program
+---------------------------------
+1. //to display Welcome message onto the screen
+2.  class Welcome
+3.  {
+4.    public static void main(String[] args)
+5.    {
+6.	System.out.println("Welcome");	
+7.    }
+8.  }
+
+Line 1 :is a comment line - comments are ignored by compiler
+Line 2 :is a class Welcome - in java everything should be in the form          of classes
+Line 4:
+-------
+main() is the entry point to run Java program
+
+JVM : JVM stands for Java Virtual Machine which acts as an interface between java byte code and operating system. When a Java program is executed JVM looks for the main() to start executing the program.
+
+public: public members are accessible outside the class
+Since JVM is outside the class Welcome, to access main() by JVM,main() should be public
+
+static: static members are accessible directly with the class name without creating objects
+  >java Welcome.main()
+
+void: void means no return type. main() is void since main() does not return anything back to JVM
+
+String[] args
+-------------
+- String is a predefined class in Java
+- String[] args is used to store command line arguments
+    eg:
+     >java Welcome x y z
+
+    x y z are command line arguments
+
+   args[0] -> x, args[1] -> y, args[2] -> z
+
+Line 6:
+-------
+System.out.println()
+-------------------
+It is used to display messages or the value of variables or both onto the screen
+
+System: It is predefined class in Java
+out : out is a data member of System class and it is an object of PrintStream class and it is static
+println(): It is method of PrintStream class
+
+class System
+{
+    static PrintStream out;
+    ...
+}
+class PrintStream
+{
+   void println(){}
+}
+
+Write a Program (WAP) to find sum of two numbers using command line arguments
+
+Refer program Sum.java
+
+Scanner class
+-------------
+- Scanner class is used to read values into variables from keyboard during program execution (runtime)
+- Scanner class is added in Java 5 version
+- Scanner class is present in java.util package
+	import java.util.Scanner;
+- Creating Object of Scanner class
+    Scanner in = new Scanner(System.in);
+
+Methods of Scanner class
+------------------------
+- nextInt() - used to read an int value
+- nextFloat() - used to read a float value
+- nextDouble() - used to read a double value
+- next() - used to read a String value without spaces
+- nextLine() - used to read a String value with spaces
+
+eg:
+int n = in.nextInt();
+double d = in.nextDouble();
+String s = in.next();
+
+WAP to accept rollno, name and marks in 3 subjects. Find total and average. Display rollno, name, total and average
+
+Refer program Student.java
+
+Task:
+-----
+WAP to accept itemno, item name, rate and quantity. 
+Find price (rate*qty). Display itemno, item name and price

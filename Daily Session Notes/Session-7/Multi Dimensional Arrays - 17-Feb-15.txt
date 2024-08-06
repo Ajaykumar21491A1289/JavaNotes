@@ -1,0 +1,92 @@
+Date:17/Feb/2015
+----------------
+Multi dimensional arrays
+------------------------
+These arrays are used to collect the elements in the form of rows and columns (tabular format)
+
+- Multi dimensional arrays are also known as array of arrays
+
+Declaration
+-----------
+syntax
+------
+datatype[][] arrayname;
+  or
+datatype arrayname[][];
+  or
+datatype[] arrayname[];
+
+eg:
+int[][] n;
+int n[][];
+int[] n[];
+
+int n[3][3];//error
+
+Memory Allocation
+-----------------
+int[][] n = new int[3][3];
+
+Refer the diagram multiarray.png
+
+WAP to create a 3x3 matrix and displays the elements in matrix form
+   - Refer program MultiArrayDemo.java
+
+Array Initialization
+--------------------
+int[][] n = {{1,2,3},
+	     {4,5,6,7},
+	     {5,6,7,8,9}};
+
+Note:
+-----
+int[][] n = new int[][3];//Error
+
+labelled break and continue
+---------------------------
+eg:
+
+x:
+SOP("xx");//error
+while (cond) //outer loop
+{
+   ....
+   ....
+   while (cond) //inner loop
+   {
+	...
+	break x;//comes out of outer loop
+	...
+   }
+   ...
+   ...
+}
+
+
+x:
+while (cond) //outer loop
+{
+   ....
+   ....
+   while (cond) //inner loop
+   {
+	...
+	continue x;//continues the loop from outer loop
+	...
+   }
+   ...
+   ...
+}
+
+After label we can have only the loop statements
+
+WAP to search an element in the given 3x3 matrix
+  - Refer the program MultiArraySearch.java
+
+WAP to find sum of two given 3x3  matrices
+  - Refer the program SumMatrix.java
+
+Assignments
+------------
+1. WAP to find sum of prinicipal diagonal elements
+2. WAP to find the transpose of a given 3x3 matrix

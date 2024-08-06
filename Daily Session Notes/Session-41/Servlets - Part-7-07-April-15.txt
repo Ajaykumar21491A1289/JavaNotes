@@ -1,0 +1,45 @@
+Date:07/April/2015
+------------------
+Filters
+-------
+Filters are used to execute some part of code before and after processing the request
+
+eg:
+- logging details like time of request, ip address
+
+Creating Filter
+---------------
+public class SampleFilter implements Filter
+{
+   public void init(FilterConfig config){}
+   public void doFilter(ServletRequest request,ServletResponse response,FilterChain chain) throws IOException,ServletException
+   {}
+   public void destroy()
+   {}
+}
+
+Life cycle of Filter
+--------------------
+- init()
+- doFilter()
+- destroy()
+
+Refer program LogFilter.java
+
+Listeners
+---------
+Listeners are executed based on the event done for the following
+- ServletContext -> ServletContextListener
+- ServletConfig -> ServletConfigListener
+- HttpSession -> HttpSessionListener
+
+eg:
+public class MyListener implements ServletContextListener
+{
+   public void ContextInitialized(ServletContextEvent event)
+   {}
+}
+
+Refer program MyListener.java
+Refer Program FetchData.java
+

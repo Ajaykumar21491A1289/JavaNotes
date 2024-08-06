@@ -1,0 +1,50 @@
+Date:23/Mar/2015
+----------------
+CallableStatement
+-----------------
+- It is used to call Procedures/Functions of PL/SQL
+
+Functions vs Procedures
+-----------------------
+- A function can return only one value using return statement
+  where as a procedure can return multiple values using out parameters
+
+Creating a Function
+-------------------
+create or replace function f_get_price(pbno number) return number is
+lprice number;
+begin
+   select price into lprice from books where bno=pbno;
+   return lprice;
+end;
+/
+
+Creating a Procedure
+--------------------
+create or replace procedure getprice(pbno in number,pprice out number)
+is
+begin
+   select price into pprice from books where bno=pbno;
+end;
+/
+
+Refer program JdbcCallableStatementDemo1.java - to call function
+Refer program JdbcCallableStatementDemo2.java - to call procedure
+
+
+DatabaseMetaData
+-----------------
+This interface is used to take the details of database tables etc
+
+Refer program DatabaseMetaDateDemo.java
+
+ResultSetMetaData
+-----------------
+This interface is used to know the details of a table like
+   - no of columns in a table
+   - type of columns of the table
+   - column names
+
+Refer the program ResultSetMetaDataDemo.java
+
+

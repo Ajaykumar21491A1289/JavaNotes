@@ -1,0 +1,29 @@
+Assignments
+-----------
+1. WAP to check whether the given number is armstrong or not
+   eg:
+   n = 371 sum = 3^3+7^3+1^1 = 371
+    The sum of cube of every digit shoule be equal to given no
+2. WAP to check whether the given no is palindrome or not
+   eg:
+  n=121 rev=121 (n==rev) 
+3. WAP to display numbers from 1 to 100 which contains a digit 9
+   o/p
+   ---
+    9 19 29 ....89 90 91 92 ...98 99
+4. WAP to display multiplication tables from 1 to 10
+5. WAP to display the following output
+      ------------------
+      Number   Factorial
+      ------------------
+   	1	  1
+	2	  2
+	3	  6
+	4  	  24
+	5 	  120
+      ------------------
+	Sum   =   153
+      ------------------
+6. WAP to check whether the given no is prime or not
+7. WAP to find sum of prime nos from 2 to 100
+8. WAP to find product of two numbers without using "*"

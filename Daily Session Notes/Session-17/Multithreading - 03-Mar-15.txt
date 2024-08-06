@@ -1,0 +1,110 @@
+Date:03/Mar/2015
+----------------
+Multithreading
+--------------
+- A thread is a light weight process under execution within a process.
+- Multithreading is used to increase the performance of application
+
+eg:
+main()
+{
+  se = sumEven();
+  so = sumOdd();
+}
+sumEven()
+{
+...
+}
+sumOdd()
+{
+..
+}
+
+Creating Threads in Java
+-------------------------
+There are two ways of creating threads
+
+1. By creating a class which extends Thread class
+   or
+2. By creating a class which implements Runnable interface
+
+eg:
+class MyThread extends Thread
+{
+   public void run()  
+   {
+	//logic goes here
+   }
+}
+MyThread t = new MyThread();
+t.start();//create a thread and invokes run() 
+
+Runnable
+---------
+class MyThread implements Runnable
+{
+   public void run()
+   {
+	//logic goes here
+   }
+}
+
+Advantages of Runnable interface over Thread class
+--------------------------------------------------
+- If a class already extends another class, to make this class as thread, the class should implement Runnable interface as Java does not support multiple inheritance
+- Ensures that run() is overridden
+
+interface Runnable
+{
+   void run();
+}
+class Thread implements Runnable
+{
+   public void run()
+   {}
+   public void start()
+   {}
+   ...
+}
+
+State Transition Diagram of a Thread
+------------------------------------
+Refer diagram Thread States.png
+
+Methods of Thread class
+-----------------------
+- Thread currentThread()
+- void setName(String)
+- String getName()
+- void setPriority(int)
+- int getPriority()
+- void run()
+- void start()
+- void join()
+- void sleep(long)
+- String toString()
+- void yield()
+
+Thread[Thread-0,5,main]
+-----------------------
+Thread-0 : Name of the thread (default name)
+5 : priority of the thread
+main : thread group
+
+Priorities
+----------
+For a thread we can give priorities from 1 to 10
+
+Min priority = 1
+Max Priority = 10
+
+class Thread implements Runnable
+{
+   public static final int MAX_PRIORITY = 10;
+   public static final int NORM_PRIORITY = 5;
+   public static final int MIN_PRIORITY = 1;
+   ...
+   ..
+}
+
+

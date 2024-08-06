@@ -1,0 +1,33 @@
+Date:02/April/2015
+------------------
+Servlet to Servlet communication
+--------------------------------
+RequestDispatcher interface is used to do servlet to servlet communication
+
+eg:
+RequestDispatcher rd = request.getRequestDispatcher("/servlet2");
+						//url pattern
+rd.forward(request,response);
+
+response.sendRedirect()
+-----------------------
+This method is used to invoke other servlets/jsps/html files
+
+eg:
+response.sendRedirect("/WebProj/emp.html");
+
+Login Application
+-----------------
+- Refer diagram loginapplication.png
+- users table
+    create table users (username varchar(10),password varchar(10));
+    insert into users values ('aaa','aaa');
+- Refer login.html
+- Refer LoginServlet.java 
+- Refer RegisterServlet.java
+
+Settings in Login Application
+-----------------------------
+- After inserting records in users table commit the transaction
+- Set the classpath to ojdbc14.jar to the WebProj in eclipse
+- Copy ojdbc14.jar into WebProj/WebContent/WEB-INF/lib folder (server)

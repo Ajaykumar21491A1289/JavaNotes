@@ -1,0 +1,50 @@
+Date:19/Feb/2015
+----------------
+static keyword
+--------------
+- static keyword can be used for a variable (data member),method and inner class
+- static keyword cannot be used for a top level class
+- static keyword cannot be used for a local variable
+- static members are accessible directly with the class name without creating objects. Objects can also access static members
+- static variable acts as a global variable with in class means all objects of the class can share static variable memory
+- A static method can access only other static members directly
+-when a new object is created it will create memory only for non-static variables not for static variables.
+Refer program StaticDemo.java
+
+Inheritance
+-----------
+- Creating a new class from an existing class is called as inheritance
+- In Java "extends" keyword is used to create a new class from an existing class
+   eg:
+   class Vehicle //Base or super or parent class
+   {
+	
+   }
+   class Car extends Vehicle //Derived or sub or child class
+   {
+
+   }
+- Through inheritance we acheive reusability of the code
+- Java does not support multiple inheritance due to ambiguites
+eg:
+Vehicle(Car,Bus,Bike)
+Furniture(Table,Chair)
+Fruit (Apple,Grape)
+Account(SavingAccount,CurrentAccount)
+
+- Inheritance is "is-a" relationship
+
+has-a relationship
+------------------
+class Dept
+{
+   Emp e;
+   ...
+}
+class Emp
+{}
+
+Dept has Emp
+
+- Refer InheritanceDemo1.java
+

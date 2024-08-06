@@ -1,0 +1,155 @@
+Date:28/Feb/2015
+----------------
+- ArithmeticException
+    - trying to divide a number by zero
+- ArrayIndexOutOfBoundsException
+    - trying to access an array which is out of index
+- StringIndexOutOfBoundsException 
+    - trying to access a char in a String which is out of index
+- NegativeArraySizeException
+    - when the array size is negative
+- NumberFormatException
+    - trying to convert a String into number which is not possible
+- NullPointerException
+    - trying to access the members of a class when the object of the       class is pointing to null
+
+Refer program ExceptionTypesDemo.java
+
+finally block
+-------------
+
+finally block is executed irrespective of exception present in try block
+
+syntax
+-------
+try
+{
+   statements;
+}
+catch(Exception e)
+{
+  //handle the exception
+}
+finally
+{
+  //statements
+}
+
+Note:
+-----
+Q: For a try block is catch block mandatory?
+A: No
+Reason:
+For a try block either we can have catch block or finally block or both
+
+Refer the program FinallyDemo.java
+
+try with multiple catch blocks
+-------------------------------
+
+try with multiple catch blocks is used to give proper message to the user based on the exception type
+
+syntax
+------
+try
+{
+  statements;
+}
+catch(ExceptionType1 e)
+{
+  sts;
+}
+catch(ExceptionType2 e)
+{
+  sts;
+}
+..
+..
+catch(ExceptionTypen e)
+{
+  sts;
+}
+
+Refer program MultipleCatchDemo.java
+
+Note:
+---
+In try with multiple catch blocks, the order of catch blocks cannot be from super class to sub class
+
+Exception Propogation
+---------------------
+If an exception is not handled in a method then this exception is propogated to the parent method. This concept is known as exception propogation
+
+eg:
+
+main()
+{
+   method1();
+}
+method1()
+{
+   method2();
+}
+method2()
+{
+   int n=10/0;
+}
+
+Refer ExceptionPropoDemo.java
+
+
+User Defined Exceptions (Custom Exceptions)
+-------------------------------------------
+class MyException extends Exception
+{
+   MyException(String s)
+   {
+	super(s);
+   }
+   MyException(){}
+}
+
+Refer program CustomExceptionDemo.java
+
+Overridding rules in exceptions
+-------------------------------
+Case 1:
+-------
+class Base
+{
+   void xxx() 
+   {
+    ..
+   }
+}
+class Derived extends Base
+{
+   void xxx() throws Exception //Error
+   {}
+}
+
+Case 2:
+-------
+class Base
+{
+   void xxx() throws IOException
+   {}
+}
+class Derived extends Base
+{
+   void xxx() //valid
+   {}
+   void xxx() throws IOException //valid
+   {}
+   void xxx() throws EOFException //valid
+   {}
+   void xxx() throws Exception //Error
+   {}
+   
+}
+
+Methods of Throwable class
+---------------------------
+- String getMessage()
+- String toString()
+- void printStackTrace()

@@ -1,0 +1,110 @@
+
+Date:10/Mar/2015
+----------------
+Collections Framework
+---------------------
+Collections are used to collect the elements of variable size(not fixed).
+
+Arrays vs Collections
+----------------------
+- In Arrays the size is fixed where as in Collections the size is not fixed
+- In Arrays we can collect only similar type of elements where as in Collections we can collect different type of elements
+- In Arrays we can store primitive type as well as reference type of elements where as in collections we can store only reference type of elements
+
+Collections Hirarchy
+--------------------
+Refer the diagram collections hirarchy.png
+
+Collection vs Map
+-----------------
+- Collection is a collection of elements where as Map is a collection of key-value pairs 
+
+List vs Set
+-----------
+- List is ordered where as Set is unordered
+- List allows duplicate elements where as Set does not allow duplicate elements
+
+ArrayList vs LinkedList
+-----------------------
+- In ArrayList the elements are stored in continuous memory locations where as in LinkedList the elements are stored in non-continuous memory locations
+- The cost of insert and delete operations are more in ArrayList where as the cost of insert and delete operations are less in LinkedList
+
+Stack
+-----
+- A Stack is collection of elements in the form of Last In First Out (LIFO) operations
+
+Operations on Stack
+-------------------
+- push -> inserts an element into the stack at the top
+- pop -> deletes an element from the stack at the top
+- peek -> retrives the top element from the stack
+
+ArrayList vs Vector
+-------------------
+- In ArrayList the methods are not synchronized where as in Vector the methods are synchronized
+- ArrayList is not thread safe where as Vector is thread safe
+
+HashSet vs LinkedHashSet
+--------------------------
+- In HashSet the elements are not ordered where as in LinkedHashSet the elements are ordered
+
+HashSet vs TreeSet
+------------------
+- HashSet is not sorted where as TreeSet is sorted
+
+HashMap vs Hashtable
+--------------------
+- In HashMap the methods are not synchronized where as in Hashtable the methods are synchronized
+- HashMap is not thread safe where as Hashtable is thread safe
+
+HashMap vs LinkedHashMap
+------------------------
+- In HashMap the elements are not ordered where as in LinkedHashMap the elements are ordered based on keys
+
+HashMap vs TreeMap
+------------------
+- In HashMap the elements are not sorted where as in TreeMap the elements are sorted based on keys
+
+Methods of List interface
+-------------------------
+- boolean add(Object) - adds an element at last
+- void add(int,Object) - adds an element at given position
+- void set(int,Object) - modifies the element at given position
+- boolean remove(Object) - deletes the element
+- void remove(int) - deletes the element at the given position
+- Object get(int) - returns the element at given position
+- int size() - returns the size of the list
+
+Refer program ArrayListDemo.java
+
+Traversing
+----------
+- accessing every element of list or set is called as traversing
+
+Iterator interface
+------------------
+- Iterator is used to traverse the elements of list or set from first to last
+
+Methods
+-------
+- boolean hasNext()
+- Object next()
+
+ListIterator interface
+-----------------------
+- ListIterator extends Iterator
+- ListIterator is used to traverse the elements of list or set from first to last as well as last to first
+
+Methods
+-------
+- boolean hasPrevious()
+- Object previous()
+
+Refer program IteratorDemo.java
+
+Additional LinkedList methods
+-----------------------------
+- void addFirst(Object)
+- void addLast(Object)
+- Object removeFirst()//it is faster than index values
+- Object removeLast()

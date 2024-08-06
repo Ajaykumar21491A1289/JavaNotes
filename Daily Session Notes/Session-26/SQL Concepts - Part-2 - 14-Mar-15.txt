@@ -1,0 +1,188 @@
+Date:14/Mar/2015
+----------------
+DQL - Data Query Language
+-------------------------
+SELECT Command
+--------------
+- used to retrive/read the records from the table
+
+syntax
+------
+SELECT */column names FROM tablename
+	[WHERE condition]
+	[ORDER BY column name]
+	[GROUP BY column name]
+	[HAVING condition];
+
+SELECT command contains 4 clauses - where, order by, group by,having
+
+eg:
+SELECT * FROM Books; //* indicates all columns
+SELECT bno,bname FROM Books;
+SELECT * FROM Books WHERE bno=222;
+SELECT * FROM Books WHERE price>=500 AND price<=700;
+
+ORDER BY clause
+---------------
+   -used to arrange the records in ascending or descending order based on given columns
+
+syntax
+------
+SELECT * FROM tablename ORDER BY column1,column2,..columnn;
+
+eg:
+SELECT * FROM Books ORDER BY price;//ascending order
+SELECT * FROM Books ORDER BY price DESC;//descending order
+SELECT * FROM Books ORDER BY price,bname;//when price values are same then it enters into bname
+
+Functions
+---------
+- sum()
+- avg()
+- count()
+- max()
+- min
+
+examples
+--------
+SELECT sum(price) "Total Price" FROM Books;
+SELECT avg(price) "Avg Price" FROM Books;
+SELECT count(*) "No of Records" FROM Books;
+SELECT max(price) "Max Price" FROM Books;
+SELECT min(price) "Min Price" FROM Books;
+
+GROUP BY clause
+---------------
+- used to group the records based on specific column
+
+Employee Table
+---------------
+
+eno        ename      sal    dno
+----------------------------------
+111  	   xxx       5000     10
+222        yyy       6000     10
+333        zzz       7000     20
+444        ppp       5500     30
+----------------------------------
+>select dno "Dept No",sum(sal) "Total Salary" from employee 
+  group by dno;
+
+output
+------
+Dept No  Total Salary
+---------------------
+30          5500
+20          7000
+10         11000
+---------------------
+
+No of employees in each dept
+----------------------------
+>select dno "Dept No",count(*) "No of emps" from employee
+   group by dno;
+output
+------
+Dept No   No of emps
+--------------------
+  3           1
+  2           1
+  1           2
+--------------------
+
+Having clause
+-------------
+- having clause is used to filter the records after grouping the records
+- having clause must be used along with group by clause only
+
+example
+-------
+Display records whose total salary of every dept is < 10000
+>select dno "Dept No",sum(sal) "Total Salary" from employee
+   group by dno having sum(sal) < 10000;
+
+output
+------
+Dept No    Total Salary
+-----------------------
+  30         5500
+  20         7000
+-----------------------
+
+WHERE clause vs HAVING clause
+-----------------------------
+- where clause is applied on the complete table of records where as having clause is applied on grouped records
+
+
+Operators in Oracle
+-------------------
+- AND
+- OR
+- NOT
+- IS
+- IN
+- BETWEEN
+- LIKE
+
+AND Operator
+------------
+- used to join the conditions and all the conditions should be true
+eg:
+select * from books where price>=500 and price<=700;
+
+OR Operator
+-----------
+- used to join the conditions and any one condition can be true
+eg:
+select * from books where bname = 'xml' or bname='html';
+
+IS Operator
+-----------
+- used to compare the null values of the columns
+eg:
+select * from books where price is null;
+select * from books where price is not null;
+
+IN Operator
+-----------
+- used to compare the values in the given set of values
+eg:
+select * from books where bname in ('xml','cpp','html');
+
+BETWEEN Operator
+----------------
+- used to retrive the records based on given range of values
+eg:
+select * from books where price between 500 and 700;
+
+LIKE operator
+-------------
+- used to retrive the records based on the given pattern
+
+wildcards
+---------
+% - all characters
+_ - single character
+
+eg:
+Display book records where bname starts with 'j'
+>select * from books where bname like 'j%';
+
+Display books where bname ends with 's'
+>select * from books where bname like '%s';
+
+Display books where second char is 's'
+>select * from books where bname like '_s%'
+
+Display books where bname contains exactly 4 chars
+>select * from books where bname like '____'; (four underscores)
+
+Display books where bname contains a char 'p'
+>select * from books where bname like '%p%'
+
+
+
+
+
+
+

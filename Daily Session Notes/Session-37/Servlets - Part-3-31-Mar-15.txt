@@ -1,0 +1,42 @@
+Date: 31/Mar/2015
+-----------------
+Reading HTML form data into a servlet
+-------------------------------------
+
+   Refer diagram readformdata.png
+
+request.getParameter()
+----------------------
+This method is used to read html form data into a servlet
+
+  Refer emp.html
+  Refer EmpServlet.java
+
+GET Method vs POST Method
+-------------------------
+- In GET method the data goes along with the url where as in POST method the data goes as a separate page (secured)
+- In GET method we can send only limited data (255 char) where as in POST we can send unlimited data
+- The performance of GET method is more than POST method
+
+Reading form field names
+------------------------
+request.getParameterNames()
+---------------------------
+This method is used to read all html form field names
+eg:
+Enumeration fnames = request.getParameterNames();
+while(fnames.hasMoreElements())
+{
+   String fname = (String)fnames.nextElement();
+}
+
+Reading multiple values for a form field
+-----------------------------------------
+Refer diagram card.png
+
+request.getParameterValues()
+----------------------------
+this method is used to read multiple values for a given form field
+
+eg:
+String[] values = request.getParameterValues("cardno");

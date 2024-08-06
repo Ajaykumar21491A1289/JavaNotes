@@ -1,0 +1,93 @@
+Date:16/Feb/2015
+----------------
+Arrays
+------
+An array is a collection of elements of similar data type and stored in continuous memory locations
+-Arrays are used to store collection of homogenous elements
+-we can assign and access those elements with index values(start with 0).
+-Arrays are in fixed size.
+
+
+Types of Arrays
+--------------
+- one dimensional arrays
+- Multi dimensional arrays
+
+
+One dimensional arrays
+----------------------
+- In one dimensional array the elements are stored in the form of rows
+
+Declaration 
+------------
+syntax
+------
+datatype[] arrayname;
+  or
+datatype arrayname[];
+
+eg:
+int[] n;
+int n[];
+int n[5];//error
+
+Memory Allocation
+-----------------
+int[] n = new int[5];
+
+- refer diagram array.png
+
+Array elements are accessed by using indexes starts from 0.
+
+Array Initialization
+--------------------
+eg:
+int[] n = {10,20,30,40,50};
+
+length member
+-------------
+- used to return the size of the array
+
+eg:
+SOP("Size = "+n.length);//Size = 5
+
+WAP to create an int array of given size and display the elements of the array
+  - refer program ArrayDemo.java
+
+WAP to find the sum of given array elements 
+  - refer program ArraySum.java
+
+Note:
+-----
+If we try to access an array out of index then it throws an 
+exception (runtime error)
+
+WAP to search an element in the given array
+   - refer program ArraySearch.java
+
+Explanation of ArraySearch
+--------------------------
+int[] n = {5,8,6,4,7};
+
+key = 6
+boolean flag = false;
+for(int i=0;i<n.length;i++)
+{
+   if (key == n[i])
+   {
+	flag=true;
+	break;
+   }
+}
+if (flag == true)
+  SOP("Found");
+else
+  SOP(Not Found");
+
+- WAP to find biggest, second biggest, smallest, second smallest in the given array
+   eg:
+   int[] n = {5,8,6,4,7};
+   big = 8
+   Sec Big = 7
+   small = 4
+   sec small = 5

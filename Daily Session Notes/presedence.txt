@@ -1,0 +1,29 @@
+Precedence				Operators
+-------------------------------------------------
+expr++ expr--            	        postfix
+
+++expr --expr +expr -expr ~ !	        unary
+
+* / %                          		multiplicative
+
++ -					additive
+
+<< >> >>>				shift
+
+< > <= >= instanceof			relational
+
+== !=					equality
+
+&					bitwise AND
+
+^					bitwise exclusive OR
+
+|					bitwise inclusive OR
+
+&&					logical AND
+
+||					logical OR
+
+? :					ternary
+
+= += -= *= /= %= &= ^= |= <<= >>= >>>=	assignment
